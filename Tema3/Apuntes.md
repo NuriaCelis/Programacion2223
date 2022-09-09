@@ -1,5 +1,28 @@
 # UNIDAD 3. ESTRUCTURAS DE CONTROL.
 
+## INDICE
+
+- [UNIDAD 3. ESTRUCTURAS DE CONTROL.](#unidad-3-estructuras-de-control)
+  - [INDICE](#indice)
+  - [INTRODUCCIÓN](#introducción)
+  - [SENTENCIAS DE CONTROL DE FLUJO](#sentencias-de-control-de-flujo)
+    - [IF - Sentencia condicional simple](#if---sentencia-condicional-simple)
+    - [IF - Sentencia condicional compuesta](#if---sentencia-condicional-compuesta)
+    - [IF - Anidación](#if---anidación)
+  - [EJERCICIOS](#ejercicios)
+    - [SWITCH](#switch)
+  - [EJERCICIOS](#ejercicios-1)
+    - [WHILE - Sentencia repetitiva mientras](#while---sentencia-repetitiva-mientras)
+      - [Bucles con contador](#bucles-con-contador)
+      - [Bucles con centinela](#bucles-con-centinela)
+    - [DO WHILE - Sentencia repetitiva hacer mientras](#do-while---sentencia-repetitiva-hacer-mientras)
+  - [EJERCICIOS](#ejercicios-2)
+    - [FOR - Sentencia repetitiva para](#for---sentencia-repetitiva-para)
+  - [EJERCICIOS](#ejercicios-3)
+  - [ANEXO DEL TEMA. BUCLES ANIDADOS](#anexo-del-tema-bucles-anidados)
+    - [¿EN QUE CONSISTEN?](#en-que-consisten)
+  - [EJERCICIOS](#ejercicios-4)
+
 ## INTRODUCCIÓN
 
 Hasta ahora las instrucciones que hemos visto, son instrucciones que se ejecutan secuencialmente. Las instrucciones de control de flujo permiten alterar esta forma de ejecución. A partir de ahora habrá líneas en el código que se ejecutarán o no dependiendo de una condición.
