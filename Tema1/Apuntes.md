@@ -4,7 +4,7 @@
 
 ¿Qué es un **programar**?
 
-Programar es hacer programas. Obvio, ¿verdad? 
+Programar es hacer programas. Obvio, ¿verdad? por supuesto.
 
 La siguiente pregunta sería entonces: ¿Que es un programa?
 
