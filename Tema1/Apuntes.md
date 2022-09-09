@@ -1,7 +1,10 @@
 
 # UNIDAD 1.  ELEMENTOS DE UN PROGRAMA INFORMÁTICO
 
+## INDICE
+
 - [UNIDAD 1.  ELEMENTOS DE UN PROGRAMA INFORMÁTICO](#unidad-1--elementos-de-un-programa-informático)
+  - [INDICE](#indice)
   - [INTRODUCCIÓN](#introducción)
   - [LENGUAJE JAVA Y ENTORNO DE DESARROLLO](#lenguaje-java-y-entorno-de-desarrollo)
     - [Ejecución de programas en Java](#ejecución-de-programas-en-java)
