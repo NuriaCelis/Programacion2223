@@ -271,8 +271,8 @@ En Java tenemos 8 tipos de datos primitivos:
 | long  | 64  | -9.223.372.036.854.775.808 a 9.223.372.036.854.775.8087 |
 | float  | 32  | +/- 3.4E+38F (6-7 dígitos importantes) |
 | double  | 64  | +/- 1.8E+308 (15 dígitos importantes) |
-| boolean  | 16  | conjunto de caracteres UNICODE ISO |
-| char  | 8 | True o False |
+| boolean  | 16  | True o False |
+| char  | 8 |  conjunto de caracteres UNICODE ISO |
 
 En este momento estamos en condiciones de hacer nuestro primer ejercicio en Java. Haremos el ejercicio 1 y el ejercicio 2 apartados a. y b. de la siguiente hoja de ejercicios:
 
