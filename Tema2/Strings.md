@@ -43,7 +43,7 @@ public class usoString{
     
     char c=ciclo.charAt(0);
     System.out.println("El primer caracter de ciclo es: "+c);
-    System.out.println("El quinto caracter de ciclo es: "+charAt(4));
+    System.out.println("El quinto caracter de ciclo es: "+ciclo.charAt(4));
   }
 }
 ```
@@ -61,7 +61,7 @@ public class usoString{
     
     char c=ciclo.charAt(0);
     System.out.println("El primer caracter de ciclo es: "+c);
-    System.out.println("El quinto caracter de ciclo es: "+charAt(4));
+    System.out.println("El quinto caracter de ciclo es: "+ciclo.charAt(4));
     
     System.out.println("*****Longitud de la cadena*****);
     System.out.println("La longitud de la cadena ciclo es: "+ciclo.length());
