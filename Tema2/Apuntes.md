@@ -246,13 +246,13 @@ System.out.println("El color de la carpa es: "+ carpa.getColor());
 ```
 ## EJERCICIOS
 
-[Hoja de ejercicios 1](Ejercicios/Hoja01_POO_02.pdf)
+:computer: Hoja de ejercicios 1
 
-[Hoja de ejercicios 2](Ejercicios/Hoja02_POO_02.pdf)
+:computer: Hoja de ejercicios 2
 
-[Hoja de ejercicios 3](Ejercicios/Hoja03_POO_02.pdf)
+:computer: Hoja de ejercicios 3
 
-[Hoja de ejercicios 4](Ejercicios/Hoja04_POO_02.pdf)
+:computer: Hoja de ejercicios 4
 
 ### Modificadores de acceso
 
@@ -539,14 +539,14 @@ Con una llamada a ese método con factorial(4); usando el ejemplo anterior, la e
 
 ## EJERCICIOS
 
-[Hoja de ejercicios 5](Ejercicios/Hoja05_POO_02.pdf)
+:computer: Hoja de ejercicios 5
 
-[Hoja de ejercicios 6](Ejercicios/Hoja06_POO_02.pdf)
+:computer: Hoja de ejercicios 6
 
-[Hoja de ejercicios 7](Ejercicios/Hoja07_POO_02.pdf)
+:computer: Hoja de ejercicios 7
 
-[Hoja de ejercicios 8](Ejercicios/Hoja08_POO_02.pdf)
+:computer: Hoja de ejercicios 8
 
-[Hoja de ejercicios 9](Ejercicios/Hoja09_POO_02.pdf)
+:computer: Hoja de ejercicios 9
 
 
