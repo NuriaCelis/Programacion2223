@@ -12,5 +12,7 @@ Apuntes de programación del CFGS de Desarrollo de Aplicaciones Multiplataforma.
 
   [Cadenas de texto en Java.](Tema2/Strings.md)
 
+  [Conceptos teóricos de la POO.](Tema2/conceptosPOO.md)
+
   [Apuntes de la Unidad 2.](Tema2/Apuntes.md)
   
