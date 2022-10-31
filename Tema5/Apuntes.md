@@ -83,7 +83,7 @@ Las relaciones entre las clases nos van a permitir saber como se comunican los d
 
 Hemos visto que los objetos de las diferentes clases se relacionan entre sí. Cuando una clase hace referencia o utiliza otra clase, ambas clases forman una asociación. Estas se representan a través de el uso de los diagramas de clases (UML)
 
-![Diagrama UML](img/imagen1.png)
+![Diagrama UML](img/Imagen1.png)
 
 Dos clases tienen una asociación si:
 - Un objeto de una clase envía un mensaje a un objeto de la otra clase. Enviar un  mensaje es utilizar alguno de sus métodos o propiedades para que el objeto realice  una determinada labor.
@@ -93,7 +93,7 @@ Dos clases tienen una asociación si:
 
 En UML las asociaciones se representan con una línea entre las dos clases  relacionadas, encima de la cual se indica el nombre de la asociación y una  flecha para indicar el sentido de la asociación
 
-![Asociación entre clases](img/imagen2.png)
+![Asociación entre clases](img/Imagen2.png)
 
 ### Agregación VS Composición
 
@@ -104,13 +104,13 @@ Definen relaciones del tipo es parte de o se compone de. Existen dos variantes:
 
 La agregación es un tipo de asociación que indica que una clase es parte de otra clase  (composición débil).Las partes pueden formar parte de diferentes agregados. La destrucción del compuesto no conlleva la destrucción de los componentes. Habitualmente se  da con mayor frecuencia que la composición. La agregación se representa en UML mediante  un diamante de color blanco colocado en el extremo en el que está la clase que representa el  “todo”.
 
-![Agregación](img/imagen3.png)
+![Agregación](img/Imagen3.png)
 
 - COMPOSICIÓN
 
 Es una forma fuerte de agregación donde la vida de la clase contenida debe  coincidir con la vida de la clase contenedor. Los componentes constituyen una parte del objeto  compuesto. De esta forma, los componentes no pueden ser compartidos por varios objetos  compuestos. La supresión del objeto compuesto conlleva la supresión de los componentes. El símbolo de composición es un diamante de color negro colocado en el extremo en el que  está la clase que representa el “todo” (Compuesto).
 
-![Agregación](img/imagen4.png)
+![Agregación](img/Imagen4.png)
 
 ### Herencia
 
@@ -120,11 +120,11 @@ A la clase que posee las características a heredar se la llama superclase y la 
 
 Para que una clase herede las características de otra hay que utilizar la palabra clave  extends tras el nombre de la clase. A esta palabra le sigue el nombre de la clase cuyas  características se heredarán. Una clase que extiende a otra hereda sus atributos y sus métodos (no los constructores). 
 
-![Herencia](img/imagen5.png)
+![Herencia](img/Imagen5.png)
 
 Puede haber varios niveles de herencia, es decir clases que heredan de otra clase que a su  vez es heredera de otra.
 
-![Herencia](img/imagen6.png)
+![Herencia](img/Imagen6.png)
 
 En Java sólo se puede hererar de una clase. No existe herencia múltiple como en otros lenguajes como Python
 
@@ -132,11 +132,11 @@ El ejemplo que proponemos es un caso en el que vamos a simular el comportamiento
 
 Para simular este comportamiento vamos a definir tres clases que van a representaran  a objetos Futbolista, Entrenador y Masajista. De cada unos de ellos vamos a necesitar  algunos datos que reflejaremos en los atributos y una serie de acciones que  reflejaremos en sus métodos. Estos atributos y métodos los mostramos en el siguiente diagrama de clases:
 
-![Herencia](img/imagen7.png)
+![Herencia](img/Imagen7.png)
 
 Como se puede observar, vemos que en las tres clases tenemos atributos y  métodos que son iguales ya que los tres tienen los atributos id, Nombre,  Apellidos y Edad; y los tres tienen los métodos de Viajar y Concentrarse. A nivel de código tendremos algo así:
 
-![Herencia](img/imagen8.png)
+![Herencia](img/Imagen8.png)
 
 Lo que podemos ver en este punto es que estamos escribiendo mucho código repetido ya que las tres clases tienen métodos y atributos comunes.
 
@@ -150,11 +150,11 @@ Si ahora queremos añadir más clases a nuestra aplicación como por ejemplo una
 
 Nuestro diagrama de clases nos quedaría del siguiente modo:
 
-![Herencia](img/imagen9.png)
+![Herencia](img/Imagen9.png)
 
 A nivel de código nos quedaría algo así:
 
-![Herencia](img/imagen10.png)
+![Herencia](img/Imagen10.png)
 
 Además de public, private y default en Java se dispone del modificador protected (protegido). Este modificador de acceso está específicamente pensado para la  herencia. Cuando se utiliza sobre una propiedad o un método indica que dicha  propiedad o método serán visibles por las subclases que además heredarán la  propiedad o el método. Sin embargo permanecerán invisibles para el resto.
 
@@ -175,7 +175,7 @@ Por último, si una subclase define un método con el  mismo nombre, tipo y argu
 
 Vamos a ver un ejemplo:
 
-![Herencia](img/imagen11.png)
+![Herencia](img/Imagen11.png)
 
 En el diagrama el objeto toby  que es un perro, usa el método  comer de la clase Perro (los  mamíferos y animales también  puede comer pero toby usa el  método redefinido en la clase  Perro).
 

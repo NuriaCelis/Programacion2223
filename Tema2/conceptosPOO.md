@@ -35,7 +35,7 @@ Ejemplo: María tiene 0 años y no camina, ni habla  y Pedro tiene 17 años, cam
 
 ## LOS CONCEPTOS DE LA POO
 
-Para poder manejar de manera eficiente las clases y los objetos que se generan con la Programación Orientada a Objetos son necesarios algunos principios que nos ayudarán a reducir la complejidad, ser más eficientes y evitar problemas. Son los 4 pilares de la POO. Todos los lenguajes orientados a objetos los implementan de una u otra manera, y es indispensable conocerlos bien.
+Para poder manejar de manera eficiente las clases y los objetos que se generan con la Programación Orientada a Objetos son necesarios algunos principios que nos ayudarán a reducir la complejidad, ser más eficientes y evitar problemas. Son los 5 pilares de la POO. Todos los lenguajes orientados a objetos los implementan de una u otra manera, y es indispensable conocerlos bien.
 
 ### ENCAPSULACIÓN
 
