@@ -149,7 +149,7 @@ else if (x==3)
 ```
 ## EJERCICIOS
 
-[Hoja de ejercicios 1](Ejercicios/Hoja01_Estructuras_03.pdf)
+:computer: Hoja de ejercicios 1
 
 ### SWITCH
 
@@ -221,7 +221,7 @@ switch (diasemana)
 ```
 ## EJERCICIOS
 
-[Hoja de ejercicios 2](Ejercicios/Hoja02_Estructuras_03.pdf)
+:computer: Hoja de ejercicios 2
 
 ### WHILE - Sentencia repetitiva mientras
 
@@ -333,7 +333,7 @@ Ejercicio para hacer: Intenta codificar el ejemplo anterior utilizando una estru
 
 ## EJERCICIOS
 
-[Hoja de ejercicios 3](Ejercicios/Hoja03_Estructuras_03.pdf)
+:computer: Hoja de ejercicios 3
 
 ### FOR - Sentencia repetitiva para
 
@@ -380,7 +380,7 @@ Como se ha podido observar, es posible declarar la variable contadora dentro del
 
 ## EJERCICIOS
 
-[Hoja de ejercicios 4](Ejercicios/Hoja04_Estructuras_03.pdf)
+:computer: Hoja de ejercicios 4
 
 ## ANEXO DEL TEMA. BUCLES ANIDADOS
 
@@ -453,4 +453,6 @@ Scanner entrada = new Scanner(System.in);
 
 ## EJERCICIOS
 
-[Hoja de ejercicios 5](Ejercicios/Hoja05_Estructuras_03.pdf)
+:computer: Hoja de ejercicios 5
+
+:computer: Hoja de ejercicios 6
