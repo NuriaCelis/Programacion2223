@@ -15,4 +15,8 @@ Apuntes de programación del CFGS de Desarrollo de Aplicaciones Multiplataforma.
   [Conceptos teóricos de la POO.](Tema2/conceptosPOO.md)
 
   [Apuntes de la Unidad 2.](Tema2/Apuntes.md)
+
+**UNIDAD 3. Estructuras de control.**
+
+[Apuntes de la Unidad 3.](Tema3/Apuntes.md)
   
