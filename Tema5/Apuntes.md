@@ -433,7 +433,32 @@ public class Prueba {
 
 En UML las clases abstractas aparece con  el nombre en cursiva. Los métodos  abstractos también aparecerán en cursiva.
 
+### Modificador final.
+
+En Java el modificador **final** en un elemento significa que dicho elemento no puede cambiar de valor, que es definitivo (en la práctica, una  constante). Se puede utilizar en varios sitios. Algunos de ellos son:
+
+- Delante del nombre de una propiedad o de una variable en su definición, crea una  constante.
+- En la declaración de un método, indica que dicho método no puede ser sobrescrito en  una subclase. Es decir si en la clase Vehiculo, el método parar se define con la palabra  final (por ejemplo public final void parar(...)) entonces la clase Coche (heredera de  Vehiculo) no puede redefinir el método. Si una subclase intentar sobrescribir el método, el  compilador de Java avisará del error.
+Una ventaja de estos métodos es que invocarles es más rápido porque al saber el  compilador que no pueden ser sobrescritos, les coloca como definitivos acelerando su  ejecución. Los métodos privados se toman como constantes ya que no pueden ser  redefinidos.
+- Si se utiliza al definir una clase (por ejemplo public final class Coche) significará que esa  clase no puede tener descendencia. Al igual que ocurre con un método de tipo final, hay  que tener precaución porque es difícil saber si en el futuro necesitaremos o no hacer  descendientes de una clase.
+
 ## EJERCICIOS
 
 :computer: Hoja de ejercicios 2 de Herencia. Solo ejercicio 3.
+
+:computer: Hoja de ejercicios 3 de Herencia.
+
+:computer: Hoja de ejercicios 4 de Herencia.
+
+## INTERFACES
+
+Mediante interfaces se definen una serie de comportamientos de  objeto. Estos comportamientos puede ser implementados en un  determinado sitio.
+
+No definen el tipo de objeto que es, sino lo que pueden hacer (sus  capacidades). Por ello lo normal es que el nombre de las interfaces  terminen con el sufijo able (configurable, modificable, cargable).
+
+
+
+
+
+
 
