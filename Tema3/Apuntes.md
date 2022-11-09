@@ -181,28 +181,28 @@ El bloque default sirve para ejecutar instrucciones para los casos en los que la
 switch (diasemana) 
 { 
      case 1:
-           texto=”Lunes”; 
+           texto="Lunes"; 
      break; 
      case 2:
-           texto=”Martes”; 
+           texto="Martes"; 
      break; 
      case 3:
-           texto=”Miércoles”; 
+           texto="Miércoles"; 
      break; 
      case 4:
-           texto=”Jueves”; 
+           texto="Jueves"; 
      break; 
      case 5:
-        texto=”Viernes”; 
+        texto="Viernes"; 
     break; 
     case 6:
-       texto=”Sábado”; 
+       texto="Sábado"; 
     break; 
     case 7:
-        texto=”Domingo”; 
+        texto="Domingo"; 
     break; 
     default: 
-         texto=”?”; 
+         texto="?"; 
 } 
 ```
 ```java
@@ -219,6 +219,35 @@ switch (diasemana)
         laborable=false;
 }
 ```
+
+A partir de la versión JDK 12, también están permitidos los cases múltiples, tal que así:
+
+```java
+switch (diasemana) 
+{
+    case 1,2,3,4,5:
+      laborable=true; break;
+    case 6, 7:
+        laborable=false;
+}
+```
+
+La instrucción Switch contempla también otra sintaxis diferente, utilizando flechas, que no hace necesario el uso del break para que no pase al siguiente caso:
+
+```java
+switch (diasemana) 
+{ 
+     case 1-> texto="Lunes"; 
+     case 2-> texto="Martes"; 
+     case 3-> texto="Miércoles"; 
+     case 4-> texto="Jueves"; 
+     case 5-> texto="Viernes"; 
+    case 6->  texto="Sábado"; 
+    case 7->  texto="Domingo";  
+    default->  texto="?"; 
+} 
+```
+
 ## EJERCICIOS
 
 :computer: Hoja de ejercicios 2
