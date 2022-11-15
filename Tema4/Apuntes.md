@@ -1,22 +1,29 @@
 # UNIDAD 4.  ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICAS. ARRAYS
 
 ## ÍNDICE
-
+- [UNIDAD 4.  ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICAS. ARRAYS](#unidad-4--estructuras-de-almacenamiento-estáticas-arrays)
+  - [ÍNDICE](#índice)
   - [INTRODUCCIÓN](#introducción)
   - [ARRAYS UNIDIMENSIONALES](#arrays-unidimensionales)
     - [Declaración](#declaración)
     - [Asignación](#asignación)
     - [Longitud](#longitud)
+  - [EJERCICIOS](#ejercicios)
     - [Inicialización](#inicialización)
+  - [EJERCICIOS](#ejercicios-1)
     - [Recorrido de un array ( FOR Y FOR-EACH)](#recorrido-de-un-array--for-y-for-each)
       - [Recorrido de un array FOR-EACH](#recorrido-de-un-array-for-each)
       - [Limitaciones del ciclo FOR-EACH](#limitaciones-del-ciclo-for-each)
   - [ARRAYS MULTIDIMENSIONALES](#arrays-multidimensionales)
+  - [EJERCICIOS](#ejercicios-2)
   - [ARRAYS DE OBJETOS](#arrays-de-objetos)
+  - [EJERCICIOS](#ejercicios-3)
   - [LA CLASE ARRAYS DE JAVA](#la-clase-arrays-de-java)
+  - [EJERCICIOS](#ejercicios-4)
   - [MÉTODO MAIN](#método-main)
     - [Uso por línea de comandos](#uso-por-línea-de-comandos)
     - [Parámetros main - netbeans](#parámetros-main---netbeans)
+  - [EJERCICIOS](#ejercicios-5)
 
 ## INTRODUCCIÓN
 
@@ -92,6 +99,7 @@ Gracias a este método el bucle de recorrido de un array (para cualquier tipo de
 	}
 ```
 Ejemplo: Realizar un programa en Java que cree un array de 10 notas y calcule la nota media de ellas.
+
 ```java
 double[] notas = {5, 4.3, 2.7, 6, 7.9, 9.8, 4.9, 7.5, 8.4, 3};
 double suma=0; 
@@ -101,6 +109,9 @@ for (int i=0;i<notas.length;i++){
 double media=suma/notas.length; 
 System.out.println("La media de las notas es " + media);
 ```
+
+## EJERCICIOS
+
 :computer: Hoja de ejercicios 1
 
 ### Inicialización
@@ -148,7 +159,11 @@ System.out.println(a==b); 	//escribe false, aunque ambos arrays tienen el mismo 
 int c[]=b; 
 System.out.println(b==c); 	//escribe true
 ```
+
+## EJERCICIOS
+
 :computer: Hoja de ejercicios 2
+
 :computer: Hoja de ejercicios 3
 
 ### Recorrido de un array ( FOR Y FOR-EACH)
@@ -260,7 +275,10 @@ Lo importante es recordar que **los arrays multidimensionales en Java son maneja
 
 También sería posible utilizar más de dos dimensiones.
 
+## EJERCICIOS
+
 :computer: Hoja de ejercicios 4
+
 :computer: Hoja de ejercicios 5
 
 ## ARRAYS DE OBJETOS
@@ -318,7 +336,11 @@ public class Grupo {
     }
 }
 ```
+
+## EJERCICIOS
+
 :computer: Ejemplos de arrays
+
 :computer: Hoja de ejercicios 6
 
 ## LA CLASE ARRAYS DE JAVA
@@ -381,6 +403,9 @@ Funciona como la anterior, sólo que indica con dos números de qué elemento a 
 int a[] = {1,2,3,4,5,6,7,8,9}; 
 int b[]=Arrays.copyOfRange(a, 3,6); //b vale {4,5,6} 
 ```
+
+## EJERCICIOS
+
 :computer: Hoja de ejercicios 7
 
 ## MÉTODO MAIN
@@ -487,6 +512,8 @@ public class MostarArgumentos {
     }
 }
 ```
+
+## EJERCICIOS
 
 :computer: Hoja de ejercicios 8
 
