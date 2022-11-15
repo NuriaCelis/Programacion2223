@@ -789,6 +789,8 @@ Vemos un ejemplo: Excepciones1 (Solo ejemplo4).
 :computer: Hoja de ejercicios 7 de Excepciones. Ejercicio 3 y 4.
 
 La cláusula finally está pensada para limpiar el código en caso de excepción. Su uso es: 
+
+```java
 	try{ 
 		... 
 	}catch (FileNotFoundException fnfe){ 
@@ -800,6 +802,8 @@ La cláusula finally está pensada para limpiar el código en caso de excepción
 	}finally{ 
 		...//Instrucciones de limpieza 
 	} 
+```
+
 Las sentencias finally se ejecutan tras haberse ejecutado el catch correspondiente. Si ningún catch capturó la excepción, entonces se ejecutarán esas sentencias antes de devolver el control al siguiente nivel o antes de romperse la ejecución. 
 Hay que tener muy en cuenta que las sentencias finally se ejecutan independientemente de si hubo o no excepción. Es decir esas sentencias se ejecutan siempre, haya o no excepción. Son sentencias a ejecutarse en todo momento. Por ello se coloca en el bloque finally código común para todas las excepciones (y también para cuando no hay excepciones).
 
