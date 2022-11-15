@@ -1,5 +1,31 @@
 # UNIDAD 5. USO AVANZADO DE CLASES
 
+- [UNIDAD 5. USO AVANZADO DE CLASES](#unidad-5-uso-avanzado-de-clases)
+  - [MIEMBROS ESTÁTICOS O DE CLASE EN JAVA](#miembros-estáticos-o-de-clase-en-java)
+  - [EJERCICIOS](#ejercicios)
+  - [HERENCIA DE CLASES](#herencia-de-clases)
+    - [Sobreescritura de métodos](#sobreescritura-de-métodos)
+    - [Constructores](#constructores)
+  - [EJERCICIOS](#ejercicios-1)
+    - [Castings de clases](#castings-de-clases)
+  - [EJERCICIOS](#ejercicios-2)
+    - [Clases Abstractas](#clases-abstractas)
+    - [Modificador final.](#modificador-final)
+  - [EJERCICIOS](#ejercicios-3)
+  - [INTERFACES](#interfaces)
+    - [Definición](#definición)
+    - [Implementación en una clase.](#implementación-en-una-clase)
+    - [Variables de interface.](#variables-de-interface)
+    - [Tipos de métodos](#tipos-de-métodos)
+    - [Diferencias entre interfaces y clases abstractas](#diferencias-entre-interfaces-y-clases-abstractas)
+  - [CLASE OBJECT](#clase-object)
+  - [EJERCICIOS](#ejercicios-4)
+  - [EXCEPCIONES EN JAVA](#excepciones-en-java)
+  - [EJERCICIOS](#ejercicios-5)
+    - [Throws](#throws)
+  - [EJERCICIOS](#ejercicios-6)
+  - [EJERCICIOS](#ejercicios-7)
+
 ## MIEMBROS ESTÁTICOS O DE CLASE EN JAVA
 
 Cuando se crea una instancia de la clase, los objetos tendrán sus propios miembros igual que en la clase.
@@ -74,43 +100,6 @@ Todos los ejemplos anteriores son casos en los que se utiliza directamente la cl
 :computer: Ejemplo: Estático
 
 :computer: Hoja de ejercicios 1 de Estático
-
-## RELACIONES ENTRE CLASES
-
-Las relaciones entre las clases nos van a permitir saber como se comunican los diferentes objetos de esas clases entre sí. Existen diferentes tipos. Los más interesantes para nosotros son: ASOCIACIÓN, AGREGACIÓN Y HERENCIA.
-
-### Asociación entre clases
-
-Hemos visto que los objetos de las diferentes clases se relacionan entre sí. Cuando una clase hace referencia o utiliza otra clase, ambas clases forman una asociación. Estas se representan a través de el uso de los diagramas de clases (UML)
-
-![Diagrama UML](img/Imagen1.png)
-
-Dos clases tienen una asociación si:
-- Un objeto de una clase envía un mensaje a un objeto de la otra clase. Enviar un mensaje es utilizar alguno de sus métodos o propiedades para que el objeto realice una determinada labor.
-- Un objeto de una clase, crea un objeto de otra clase.
-- Una clase tiene atributos cuyos valores son objetos o colecciones de objetos de otra clase
-- Un objeto de una clase recibe como parámetros de un método objetos de otra clase.
-
-En UML las asociaciones se representan con una línea entre las dos clases relacionadas, encima de la cual se indica el nombre de la asociación y una flecha para indicar el sentido de la asociación
-
-![Asociación entre clases](img/Imagen2.png)
-
-### Agregación VS Composición
-
-Son relaciones que se basan en la idea de entender un objeto como una composición o parte de otro. Son tipos especiales de asociación.
-Definen relaciones del tipo es parte de o se compone de. Existen dos variantes:
-
-- AGREGACIÓN
-
-La agregación es un tipo de asociación que indica que una clase es parte de otra clase (composición débil).Las partes pueden formar parte de diferentes agregados. La destrucción del compuesto no conlleva la destrucción de los componentes. Habitualmente se da con mayor frecuencia que la composición. La agregación se representa en UML mediante un diamante de color blanco colocado en el extremo en el que está la clase que representa el “todo”.
-
-![Agregación](img/Imagen3.png)
-
-- COMPOSICIÓN
-
-Es una forma fuerte de agregación donde la vida de la clase contenida debe coincidir con la vida de la clase contenedor. Los componentes constituyen una parte del objeto compuesto. De esta forma, los componentes no pueden ser compartidos por varios objetos compuestos. La supresión del objeto compuesto conlleva la supresión de los componentes. El símbolo de composición es un diamante de color negro colocado en el extremo en el que está la clase que representa el “todo” (Compuesto).
-
-![Agregación](img/Imagen4.png)
 
 ## HERENCIA DE CLASES
 
@@ -452,13 +441,372 @@ Una ventaja de estos métodos es que invocarles es más rápido porque al saber 
 
 ## INTERFACES
 
+### Definición
+
 Mediante interfaces se definen una serie de comportamientos de  objeto. Estos comportamientos puede ser implementados en un  determinado sitio.
 
 No definen el tipo de objeto que es, sino lo que pueden hacer (sus  capacidades). Por ello lo normal es que el nombre de las interfaces  terminen con el sufijo able (configurable, modificable, cargable).
 
+**¿Que son las interfaces?:** Una interfaz es un contrato de compromiso. La clase tiene que implementar los métodos abstractos que tenga dicha interface. Dicho de otro modo, una interface tiene un conjunto de operaciones que una clase se compromete a implementar. 
 
+La interfaz mediante su firma marca qué métodos deben ser sobrescritos. (Firma es la cabecera del método). Lo más habitual es que en ella se definan los métodos abstractos como sucedía antes de Java 8. No es necesario que estos lleven abstract delante. (por defecto)
+Desde Java 8, pueden incluir también métodos con cuerpo (abstractos, estáticos y por defecto). También puede incluir atributos que deben inicializarse (constantes).
 
+Usaremos la palabra reservada **Interface** para definir una interfaz. Se usan las misma normas de acceso (visibilidad) que para una clase, así como las mismas reglas de nombres que una clase.. 
 
+Una clase puede heredar interfaces (extends) y esta puede ser múltiple (podemos heredar de varios interfaces).
 
+![Interfaces](img/Imagen12.png)
 
+Vemos un ejemplo: Ejemplo1Interfaces (sin el main).
 
+### Implementación en una clase.
+
+Usa implements (como el resto de herencias). Una clase puede implementar más de una interface (simulación de herencia múltiple). Las separado por comas. Es importante ver que no tienen porque existir una relación de herencia entre la clase que las implementa y la/s interfaces. (ES UN). Por ejemplo el método mostrar() de la Interface 2 lo puedo implementar en muchísimas clases.
+
+![Interfaces](img/Imagen13.png)
+
+### Variables de interface.
+
+Las variables de interface no son objetos. Se parece su uso, pero en realidad son  variables que son capaces de hacer referencia a cualquier objeto de una clase que  haya implementado la interface. Es decir, una variable de la interface Arrancable puede utilizarse para hacer referencia a objetos de la clase Coche y de la clase  BombaAgua, ya que ambas son clases que implementan dicha interface.
+
+Esto permite cosas como:
+
+```java
+Arrancable motorcito; //motorcito es una variable de tipo arrancable  Coche c=new Coche(); //Objeto de tipo coche
+BombaAgua ba=new BombaAgua(); //Objeto de tipo BombaAgua  motorcito=c; //Motorcito apunta al coche
+motorcito.arrancar(); //Se arrancará el coche  motorcito=ba; //Motorcito apunta a la bomba de agua  motorcito.arrancar(); //Se arranca la bomba de agua
+```
+
+El juego que dan estas variables es impresionante, manipulan todo tipo de objetos.  Eso facilita la escritura de métodos genéricos para clases que implementen la  misma interface
+
+Vemos un ejemplo: Ejemplo1Interfaces (el main).
+
+### Tipos de métodos
+
+**Métodos por defecto:** Se utilizan poniendo la palabra reservada default. Es un método que ya tiene una implementación por defecto, descrita en la interface. 
+
+```java
+public interface Interfaz { 
+	default public void metodoPorDefecto() { 
+		System.out.println("Este es método por defecto"); 
+} } 
+```
+
+La clase que lo implementa lo puede dejar como está, o lo puede sobrescribir. 
+
+Uso: supongamos que hemos desarrollado un proyecto en el que tenemos una interface de la que heredan muchas clases. Si necesitase incluir un nuevo método es esta, no me quedaría más remedio que sobrescribir todas las clases que la heredan, sobrescribiendo en ellas el nuevo método. La solución sería hacer el método default y solo sobrescribirla en la clase que la necesite.
+
+**Métodos estáticos:** Se utiliza la palabra reservada static (presentación - parte 1). Funciona como un método estático de clase, se puede llamar sin haber implementado la interfaz, poniendo el nombre de la interfaz.método(). Tienen la misma sintaxis que los métodos estáticos en clases 
+
+```java
+public interface Interfaz{
+    public static void metodoEstatico(){
+        System.out.println("Es un método estático");
+    }
+}
+```
+
+Uso: me permite incluir el uso de los métodos estáticos que ya vienen implementados en interfaces de Java y poder usarlos sin problemas.
+
+### Diferencias entre interfaces y clases abstractas
+
+| INTERFACES | CLASES ABSTRACTAS |
+| ----- | ----- |
+| No se pueden instanciar | No se pueden instanciar |
+| Métodos sin implementación | Métodos sin implementación |
+| Métodos con implementación por defecto | Métodos con implementación por defecto |
+| Atributos estáticos o constantes | Cualquier tipo de atributo |
+| Métodos públicos o por defecto | Métodos públicos, privados, protegidos o por defecto |
+| Una clase puede implementar varios interfaces | Una clase solo puede heredar de otra clase |
+
+**Cuando usar una interfaz o una clase abstracta**
+
+| INTERFACES | CLASES ABSTRACTAS |
+| ----- | ----- |
+| Clases no relacionadas podrán
+implementar los métodos. | Compartir código con clases muy relacionadas. |
+| Si se quiere indicar que existe un tipo de comportamiento, pero no sabemos quien lo implementa. | Las clases derivadas usarán métodos protected o private. |
+| Si necesitamos tener herencia múltiple. | Queremos definir atributos que no sean estáticos o constantes. |
+
+Vemos un ejemplo: Estatico2
+
+## CLASE OBJECT
+
+En Java todas las clases heredan de Object. Al ser superclase de todas las clases de Java, todos los objetos Java en definitiva son de tipo Object, lo que permite crear métodos genéricos. Ejemplo:
+
+```java
+public class Clase{
+public static void funcion(Object o){
+…
+}
+}
+….
+public class D{
+public static void main(String args[] ){
+Clase.funcion(new String());  Clase.funcion (new int[7]);  Clase.funcion (new Clase());
+//todas las líneas son válidas. Al método estático funcion se le puede enviar cualquier
+//clase de objeto
+```
+
+Otra ventaja es que Object posee una serie de métodos muy interesantes que todas las clases heredan.  Pero, normalmente, hay que redefinirlos para que funcionen adecuadamente adaptándolos a la clase  correspondiente.
+
+**Comparar objetos**
+
+La clase Object proporciona un método para comprobar si dos objetos son iguales. Este  método es equals. Este método recibe como parámetro un objeto con quien comparar y  devuelve true si los dos objetos son iguales.
+No es lo mismo equals que usar la comparación de igualdad. Ejemplo (suponiendo que se ha  definido correctamente el método equals):
+
+```java
+Coche uno=new Coche(“Renault”,”Megane”,”P4324K”);
+Coche dos=uno; //dos y uno son referencias al mismo coche
+boolean resultado=(uno.equals(dos)); //Resultado valdrá true
+resultado=(uno==dos); //Resultado también valdrá true
+dos=new Coche(“Renault”,”Megane”,”P4324K”); //los mismos datos
+resultado=(uno.equals(dos)); //Resultado valdrá true
+resultado=(uno==dos); //Resultado ahora valdrá false
+```
+
+En el ejemplo anterior equals devuelve true si los dos coches tienen el mismo modelo, marca y  matrícula . El operador “==” devuelve true si las dos referencias que se comparan apuntan al  mismo objeto.
+
+Realmente en el ejemplo anterior la respuesta del método equals sólo será válida si en la  clase que se está comparando (Coche en el ejemplo) se ha redefinido el método equals. Esto  no es opcional sino obligatorio si se quiere usar este método.
+
+El resultado de equals depende de cuándo consideremos nosotros que hay que devolver verdadero o falso (es el creador de la clase el que sabe como compararla).
+
+Para que el ejemplo anterior funcione, el método equals de la clase Coche sería:
+
+```java
+public class Coche extends Vehículo{
+...
+public boolean equals (Object o){
+    if ((o!=null) && (o instanceof Coche)){
+        if (((Coche)o).matricula.equals(matricula) && ((Coche)o).marca.equals(marca) &&  ((Coche)o).modelo.equals(modelo))
+            return  true;
+        else
+            return false ;
+        }
+    else
+        return false; //Si no se cumple todo lo anterior
+    }
+}
+```
+
+Vemos un ejemplo: EjemploEqualsYComparable
+
+**Método toString**
+
+Este es un método de la clase Object que da como resultado un  texto que describe al objeto. La utiliza, por ejemplo el método  println para poder escribir un método por pantalla. Normalmente  en cualquier clase habría que definir el método toString. Sin  redefinirlo el resultado podría ser:
+
+```java
+Coche uno=new Coche();
+System.out.println(uno);//Escribe: Coche@26e431 el código de clase
+
+//Si redefinimos este método en la clase Coche:
+public String toString(){
+return("Velocidad :"+velocidad+"\nGasolina: "+gasolina);
+}
+
+//Ahora en el primer ejemplo se escribiría la velocidad y la gasolina  del coche.
+```
+
+Vemos un ejemplo: EjemploObject.
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 5 de Herencia.
+
+:computer: Hoja de ejercicios 6 de Herencia.
+
+## EXCEPCIONES EN JAVA
+
+Uno de los problemas más importantes al escribir aplicaciones es el tratamiento de los errores. Los errores detienen la ejecución del programa e impiden su desarrollo normal y, lo peor, además provocan que el usuario esté desinformado. Toda programadora o programador tiene que reconocer las situaciones que pueden provocar el fin de la ejecución normal del programa por un error no controlado. Dicho de otra forma, todos los posibles errores en un programa deben de estar controlados. 
+
+Java nos echa una mano para ello a través de las excepciones. Se denomina excepción a un hecho que podría provocar la detención del programa; es decir, una condición de error en tiempo de ejecución pero que puede ser controlable (a través de los mecanismos adecuados). 
+
+En Java, sin embargo, se denomina error a una condición de error incontrolable (ejemplos son el error que ocurre cuando no se dispone de más memoria o errores de sintaxis). Ejemplos de excepciones son: 
+
+- El archivo que queremos abrir no existe 
+- Falla la conexión a una red
+- Se intenta dividir entre cero 
+
+El control de las excepciones se realiza mediante las sentencias try y catch. La sintaxis es: 
+
+```java
+	try { 
+		instrucciones que se ejecutan salvo que haya un error 
+	}
+	catch (ClaseExcepción objetoQueCapturaLaExcepción) { 
+		instrucciones que se ejecutan si hay un error 
+	} 
+```
+
+Puede haber más de una sentencia catch para un mismo bloque try. Ejemplo: 
+
+```java
+	try { 
+		readFromFile(“arch”); 
+		... 
+	}
+	catch(FileNotFoundException e) { 
+		//archivo no encontrado 
+		... 
+	}
+	catch (IOException e) { 
+		... 
+	} 
+```
+Si en las instrucciones del bloque try hay un error causado por no encontrar el archivo se producirá una excepción de tipo FileNotFound y será manejada por el catch correspondiente, si se produce del otro tipo (IOException) se maneja por el siguiente, si se produce de otro tipo, el programa se detendrá. 
+
+Diagrama de algunas de las clases fundamentales para el control de excepciones. 
+
+![Excepciones](img/Imagen14.png)
+
+Dentro del bloque try se colocan las instrucciones susceptibles de provocar una excepción, el bloque catch sirve para capturar esa excepción y evitar el fin de la ejecución del programa. Desde el bloque catch se maneja, en definitiva, la excepción. 
+
+Cada catch maneja un tipo de excepción. Cuando se produce una excepción, se busca el catch que posea el manejador de excepción adecuado, será el que utilice el mismo tipo de excepción que se ha producido. Esto puede causar problemas si no se tiene cuidado, ya que la clase Exception es la superclase de todas las demás. Por lo que si se produjo, por ejemplo, una excepción de tipo AritmethicException y el primer catch captura el tipo genérico Exception, será ese catch el que se ejecute y no los demás. 
+
+Vemos un ejemplo: Excepciones1 (Solo ejemplo1).
+
+Por eso el último catch debe ser el que capture excepciones genéricas y los primeros deben ser los más específicos. Lógicamente si vamos a tratar a todas las excepciones (sean del tipo que sean) igual, entonces basta con un solo catch que capture objetos Exception. Ejemplo (de mal uso): 
+
+```java
+	int x; 
+	try{ 
+		x=Integer.parseInt( JOptionPane.showInputDialog("Escriba un número")); 
+	}
+	catch (Exception e) { 
+		JOptionPane.showMessageDialog(null, "Error indeterminado"); 
+	}
+	catch (NumberFormatException e) { 
+		JOptionPane.showMessageDialog(null, "El número no es válido"); 
+	} 
+```
+
+El código del catch NumberFormatException no es alcanzable, porque siempre se ejecutaría el primer catch. De hecho hoy en día Java marca como error ese código.
+
+Cuando se produce un error, se asume que es irrecuperable. Por tanto, se anula la instrucción que dio pie al error. En caso de querer que se maneje el error y regresar de nuevo al código que lo provocó, deberíamos ser nosotros los que lo controlemos encerrando el bloque try en un bucle que se repetirá hasta que el error deje de existir.
+
+```java
+	boolean indiceNoValido=true; 
+	int i; //Entero que tomará nos aleatorios de 0 a 9 
+	String texto[]={"Uno","Dos","Tres","Cuatro","Cinco"}; 
+	while(indiceNoValido){ 
+		try{ 
+			i=(int)(Math.round(Math.random()*9)); 
+			System.out.println(texto[i]); 
+			indiceNoValido=false; 
+		}catch(ArrayIndexOutOfBoundsException exc){ 
+			System.err.println("Fallo en el índice"); 
+		}	 
+	} 
+```
+
+Vemos un ejemplo: Excepciones1 (Solo ejemplo2).
+
+Explicación del ejemplo 2: En el código anterior, el índice i calcula un número aleatorio del 0 al 9 y con ese número el código accede al array texto que sólo contiene 5 elementos. Esto producirá continuamente (ya que el array es mucho más pequeño) una excepción del tipo ArrayIndexOutOfBoundsException que es manejada por el catch correspondiente. 
+
+Para buscar otro intento, el bloque catch está dentro de un bucle while, que permite otro intento y así hasta que no haya excepción (es decir hasta que el número esté entre 0 y 5), lo que provocará que indiceNovalido valga true y la salida, al fin, del while. Es un tanto enrevesado el código pero valga como ejemplo del funcionamiento de la captura de errores con reintento.
+
+La clase Exception es la superclase de todos los tipos de excepciones. Esto permite utilizar una serie de métodos comunes a todas las clases de excepciones: 
+
+- String getMessage(): obtiene el mensaje descriptivo de la excepción o una indicación específica del error ocurrido: 
+    ```java
+	try{ 
+
+	} catch (IOException ioe){ 
+		System.out.println(ioe.getMessage()); 
+	} 
+    ```
+- String toString(): escribe una cadena sobre la situación de la excepción. Suele indicar la clase de excepción y el texto de getMessage(). 
+- void printStackTrace(): escribe el método y mensaje de la excepción (la llamada información de pila). El resultado es el mismo mensaje que muestra el ejecutor (la máquina virtual de Java) cuando no se controla la excepción.
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 7 de Excepciones. Ejercicio 1 y 2.
+
+### Throws
+
+En la orientación a objetos toda acción la realiza un método. Si llamamos a un método que puede generar un error, ¿quién la manejará? 
+¿El propio método? ¿O el código que hizo la llamada al método?
+
+Con lo visto hasta ahora, sería el propio método quien se encargara de sus excepciones, pero esto complica el código ya que descentraliza el control de excepciones y dificulta el mantenimiento del código. Por eso otra posibilidad es hacer que la excepción la maneje el código que hizo la llamada. 
+
+Esto se hace añadiendo la palabra throws tras la primera línea de un método. Tras esa palabra se indica qué excepciones puede provocar el código del método. Si ocurre una excepción en el método, el código abandona ese método y regresa al código desde el que se llamó al método. Allí se posará en el catch apropiado para esa excepción. Ejemplo: 
+
+```java
+	void usarArchivo (String archivo) throws IOException, InterruptedException { 
+		... 
+	} 
+```
+
+Vemos un ejemplo: Excepciones1 (Solo ejemplo3).
+
+En este caso se está indicando que el método usarArchivo puede provocar excepciones del tipo IOException y InterruptedException. Lo cual obliga a que el código que invoque a este método deba preparar el (o los) catch correspondientes. Para utilizar el método: 
+
+```java
+	try{ 
+		... 
+		objeto.usarArchivo("C:\texto.txt");//puede haber excepción 
+	.. 
+	}
+	catch(IOException ioe){ 
+		... 
+	}
+	catch(InterruptedException ie){ 
+		... 
+	}
+	... 
+```
+
+La instrucción throw nos permite provocar a nosotros una excepción (o lo que es lo mismo, crear artificialmente nosotros las excepciones). Ante: 
+
+```java
+throw new Exception(); 
+```
+
+El flujo del programa se dirigirá a la instrucción try…catch más cercana. Se pueden utilizar constructores en esta llamada (el formato de los constructores depende de la clase que se utilice): 
+
+```java
+throw new Exception(“Error grave, grave”); 
+```
+Eso construye una excepción con el mensaje indicado. 
+throw permite también relanzar excepciones. Esto significa que dentro de un catch podemos colocar una instrucción throw para lanzar la nueva excepción que será capturada por el catch correspondiente: 
+
+```java
+	try{ 
+		... 
+	} catch(ArrayIndexOutOfBoundsException exc){ 
+		throw new IOException(); 
+	} catch(IOException){ 
+		... 
+	} 
+```
+El segundo catch capturará también las excepciones del primer tipo 
+
+Vemos un ejemplo: Excepciones1 (Solo ejemplo4).
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 7 de Excepciones. Ejercicio 3 y 4.
+
+La cláusula finally está pensada para limpiar el código en caso de excepción. Su uso es: 
+	try{ 
+		... 
+	}catch (FileNotFoundException fnfe){ 
+		... 
+	}catch(IOException ioe){ 
+		... 
+	}catch(Exception e){ 
+		... 
+	}finally{ 
+		...//Instrucciones de limpieza 
+	} 
+Las sentencias finally se ejecutan tras haberse ejecutado el catch correspondiente. Si ningún catch capturó la excepción, entonces se ejecutarán esas sentencias antes de devolver el control al siguiente nivel o antes de romperse la ejecución. 
+Hay que tener muy en cuenta que las sentencias finally se ejecutan independientemente de si hubo o no excepción. Es decir esas sentencias se ejecutan siempre, haya o no excepción. Son sentencias a ejecutarse en todo momento. Por ello se coloca en el bloque finally código común para todas las excepciones (y también para cuando no hay excepciones).
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 7 de Excepciones. Ejercicio 5.
+
+:computer: Hoja de ejercicios 8 de Excepciones.
+
+:computer: Hoja de ejercicios 9 de Excepciones.
