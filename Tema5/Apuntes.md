@@ -26,6 +26,7 @@
   - [EJERCICIOS](#ejercicios-6)
   - [EJERCICIOS](#ejercicios-7)
 
+
 ## MIEMBROS ESTÁTICOS O DE CLASE EN JAVA
 
 Cuando se crea una instancia de la clase, los objetos tendrán sus propios miembros igual que en la clase.
@@ -814,3 +815,7 @@ Hay que tener muy en cuenta que las sentencias finally se ejecutan independiente
 :computer: Hoja de ejercicios 8 de Excepciones.
 
 :computer: Hoja de ejercicios 9 de Excepciones.
+
+:computer: Hoja de ejercicios 10 de Herencia (Repaso de clases).
+
+:computer: Hoja de ejercicios 11 de Herencia (Contenido teórico-práctico. Opcional).
