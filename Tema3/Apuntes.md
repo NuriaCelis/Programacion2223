@@ -462,7 +462,7 @@ Scanner entrada = new Scanner(System.in);
  
         //Usamos un bucle anidado para dibujar los asteriscos del medio
         //Calcula las filas intermedias poniendo un * al inicio y final de llas.
-        for(int cont=1;(numAsteriscosLado-2)>=cont;cont++){
+        for(int cont=1;cont<=(numAsteriscosLado-2);cont++){
             System.out.print("*");
             //Este bucle dibuja los espacio entre el primer y ultimo asterisco
             //de cada una de las filas.
