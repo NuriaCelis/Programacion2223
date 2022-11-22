@@ -26,6 +26,6 @@ int y= r.nextInt(N);
 // y será un número entre 0 y N-1
 int y= r.nextInt(N)+1;
 // y será un número entre 1 y N
-int y= rand.nextInt(M-N+1)+N;
+int y= r.nextInt(M-N+1)+N;
 //y será un número entre M y N ambos incluidos y siendo M mayor que N
 ```
