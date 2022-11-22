@@ -455,7 +455,7 @@ Scanner entrada = new Scanner(System.in);
         numAsteriscosLado=entrada.nextInt();
  
         //Dibujamos la parte de arriba del cuadrado
-        for(int cont=0;numAsteriscosLado>cont;cont++){
+        for(int cont=0;cont<numAsteriscosLado;cont++){
             System.out.print("*");
         }
         System.out.println("");
@@ -474,7 +474,7 @@ Scanner entrada = new Scanner(System.in);
         }
  
         //Dibujamos la parte de abajo del cuadrado
-        for(int cont=0;numAsteriscosLado>cont;cont++){
+        for(int cont=0;cont<numAsteriscosLado;cont++){
             System.out.print("*");
         }
         System.out.println("");
