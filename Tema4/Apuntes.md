@@ -48,7 +48,7 @@ Hasta ahora conocemos los tipos de datos simples. Con ellos no podemos gestionar
 - Hay que tener en cuenta que en los arrays el primer elemento tiene como índice el **número cero**.
 - En Java los arrays son **OBJETOS**.
 
-Si tenemos el siguiente array de notas:****
+Si tenemos el siguiente array de notas:
 
 ![array de notas](img/arraynotas.png)
 
