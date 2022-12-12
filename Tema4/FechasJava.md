@@ -12,6 +12,7 @@
   - [Duration](#duration)
   - [DateTimeFormatter](#datetimeformatter)
   - [EJERCICIOS](#ejercicios)
+
 ## Localización
 En el paquete **java.time** resolvemos los problemas con :
 -**fechas** con **LocalDate**
