@@ -38,9 +38,10 @@ if(f.exists()){
     System.out.println("El fichero no existe");
 }
 ```
-## EJERCICIOS
 
-:computer: Ejemplo File
+**Ejemplo:** Ejemplo File
+
+## EJERCICIOS
 
 :computer: Hoja de ejercicios 1
 
@@ -80,17 +81,15 @@ La clase Files tiene métodos para realizar:
     - isExecutable
     - Etc.
   
-## EJERCICIOS
+**Ejemplo:** EjemploNIO
 
-:computer: EjemploNIO
-
-2. Manipulación de ficheros a nivel de sistema
+1. Manipulación de ficheros a nivel de sistema
     - Borrar (delete, deleteIfExists)
     - Copiar (copy)
     - Mover (move)
     - Para crear ficheros: Regulares (createFile) y Temporales (createTempFile)
 
-3. La lectura y escritura con Java NIO de ficheros es mucho más sencilla:
+2. La lectura y escritura con Java NIO de ficheros es mucho más sencilla:
     - Dispone de métodos que agilizan la lectura sobre ficheros de texto: readAllLines, lines, readString (desde Java 11)
     - Disponen de métodos más eficientes para instanciar flujos de caracteres
     - Para flujos de lectura (newBufferedReader). Ojo! No se trata del constructor
@@ -99,13 +98,11 @@ La clase Files tiene métodos para realizar:
     - Para flujos de lectura (newInputStream)
     - Para flujos de escritura (newOutputStream)
 
-4. Files también tiene métodos para trabajar con carpetas o directorios
+3. Files también tiene métodos para trabajar con carpetas o directorios
     - Listar:	Contenido de directorios (newDirectoryStream, list, find, walk)
     - Crear: Crear un directorio (createDirectory, createDirectories) o directorio temporal (createTempDirectory)
 
-## EJERCICIOS
-
-:computer: EjemploNIO2
+**Ejemplo:** EjemploNIO2
 
 ## FLUJOS DE DATOS
 
