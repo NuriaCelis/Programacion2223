@@ -68,7 +68,7 @@ class Punto {
     private int x, y;
     // Atributos de clase: cantidad de puntos creados hasta el momento
     public static cantidadPuntos;
-   public static final nombre;
+    public static final nombre;
 }
 ```
 Obviamente, para que esto funcione como estás pensando, también habrá que escribir el código necesario para que cada vez que se cree un objeto de la clase Punto se incremente el valor del atributo cantidadPuntos. 
@@ -90,6 +90,7 @@ String enteroCadena= String.valueOf (23);
 String floatCadena= String.valueOf (24.341);
 ```
 - static int parseInt (String s): en este caso se trata de un método estático de la clase Integer . Analiza la cadena pasada como parámetro y la transforma en un int. Ejemplo de uso:
+  
 ```java
 int cadenaEntero= Integer.parseInt ("-12");
 ```
