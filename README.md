@@ -23,3 +23,7 @@ Apuntes de programación del CFGS de Desarrollo de Aplicaciones Multiplataforma.
 **UNIDAD 4.  ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICAS. ARRAYS.**
 
 [Apuntes de la Unidad 4.](Tema4/Apuntes.md)
+
+**UNIDAD 5.  USO AVANZADO DE CLASES.**
+
+[Apuntes de la Unidad 5.](Tema5/Apuntes.md)
