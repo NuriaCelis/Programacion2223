@@ -105,9 +105,9 @@ Todos los ejemplos anteriores son casos en los que se utiliza directamente la cl
 
 ## HERENCIA DE CLASES
 
-La herencia define una relación entre clases en la cual una clase posee características (métodos y propiedades) que proceden de otra. Esto permite estructura de forma muy atractiva los programas y reutilizar código de forma más eficiente. Es decir genera relaciones entre clases del tipo ES UN.
+La herencia define una relación entre clases en la cual una clase posee características (métodos y propiedades) que proceden de otra. Esto permite estructura de forma muy atractiva los programas y reutilizar código de forma más eficiente. Es decir genera relaciones entre clases del tipo **ES UN**.
 
-A la clase que posee las características a heredar se la llama superclase y la clase que las hereda se llama subclase. Una subclase puede incluso ser superclase en otra relación de herencia. También se emplea habitualmente los términos madre para referirnos a una superclase e hija para una subclase.
+A la clase que posee las características a heredar se la llama **superclase** y la clase que las hereda se llama **subclase**. Una subclase puede incluso ser superclase en otra relación de herencia. También se emplea habitualmente los términos madre para referirnos a una superclase e hija para una subclase.
 
 Para que una clase herede las características de otra hay que utilizar la palabra clave extends tras el nombre de la clase. A esta palabra le sigue el nombre de la clase cuyas características se heredarán. Una clase que extiende a otra hereda sus atributos y sus métodos (no los constructores). 
 
