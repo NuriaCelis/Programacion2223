@@ -214,7 +214,7 @@ public class Vehiculo {
 public class Coche extends Vehiculo {
     private int gasolina;
     public Coche(double v, int g){
-        super.(v);
+        super(v);
         gasolina*=g;
     }
 }
@@ -225,7 +225,7 @@ public class Coche extends Vehiculo {
 Los constructores no se heredan de la clase base a las clases derivadas. Pero sí se puede invocar al constructor de la clase base. De hecho por defecto aunque haya o no haya constructor se hace una invocación al constructor por defecto de la clase base.
 
 ```java
-public classA{
+public class A{
     protected int valor;
     public A(){
         valor=2;
@@ -235,7 +235,7 @@ public classA{
     }
 }
 
-public classB extends A{
+public class B extends A{
     public void escribir(){  
         System.out.println(valor*2);
     }
@@ -354,11 +354,11 @@ Comprueba si el objeto pertenece a una determinada clase y devuelve un valor tru
 ```java
 Coche miMercedes=new Coche();
 if (miMercedes instanceof Coche)
-    System.out.println(“ES un coche”);  
+    System.out.println("ES un coche");  
 if (miMercedes instanceof Vehículo)
-    System.out.println(“ES un coche”);  
+    System.out.println("ES un vehiculo");  
 if (miMercedes instanceof Camión)
-    System.out.println(“ES un camión”);
+    System.out.println("ES un camión");
 ```
 
 En el ejemplo anterior aparecerá en pantalla:
