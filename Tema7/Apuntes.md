@@ -146,7 +146,7 @@ Las clases para trabajar con ficheros se encuentran en el paquete java.io, por l
 
 **Gestión de ficheros de texto (Byte a byte)**
 
-### Lectura de ficheros de texto:
+### Lectura de ficheros de texto byte a byte:
 
 La **clase InputStream** y sus hijas se utilizan para leer corrientes de datos byte a byte. Con la clase FileInputStream leemos de ficheros de texto de forma secuencial.
 
@@ -180,6 +180,8 @@ try {
 
 ```
 **Ejemplo:** LeerByteaByte
+
+### Escritura de ficheros de texto byte a byte
 
 La **clase OutputStream** y sus hijas se utilizan para escribir corrientes de datos byte a byte. Con la clase FileOutputStream escribimos en ficheros de texto de forma secuencial.
 
@@ -242,3 +244,375 @@ En este ejemplo hemos añadido palabra true después del nombre del fichero para
 ## EJERCICIOS
 
 :computer: Hoja de ejercicios 2
+
+**Gestión de ficheros de texto (Caracter a caracter)**
+
+### Lectura de ficheros de texto caracter a caracter
+
+La clase **Reader** y sus hijas se utilizan para leer corrientes de datos byte a byte. Podemos abrir un fichero de texto para leer usando la clase **FileReader**. Esta clase tiene métodos que nos permiten leer caracteres. Sin embargo, suele ser habitual querer las líneas completas, bien porque nos interesa la línea completa, bien para poder analizarla luego y extraer campos de ella. 
+
+FileReader no contiene métodos que nos permitan leer líneas completas, pero sí **BufferedReader**.
+
+Afortunadamente, podemos construir un BufferedReader a partir del FileReader de la siguiente forma:
+
+```java
+File archivo = new File ("C:\\archivo.txt");
+FileReader fr = new FileReader (archivo);
+BufferedReader br = new BufferedReader(fr);
+...
+String linea = br.readLine(); //permite leer una línea
+```
+
+Ejemplo: Mostramos por pantalla el contenido del fichero “mifichero.txt”. Para ello se leerá línea a línea todo el fichero:
+
+```java
+public static void main(String[] args) {
+  FileReader fr = null;
+  BufferedReader br = null;
+  String linea;
+  try {
+    fr = new FileReader("mifichero.txt");
+    br = new BufferedReader(fr);
+    while ((linea = br.readLine()) != null) {
+      System.out.println(linea);
+    }
+  } catch (IOException ex) {
+    System.err.println(ex.toString());
+  } finally {
+    if (br != null)
+			try {
+        br.close();
+      } catch (IOException ex) {
+        System.out.println("Error al cerrar");
+      }
+    }
+  }
+```
+
+### Escritura de ficheros de texto caracter a caracter.
+
+Para escribir suele ser habitual hacer uso de la clase **BufferedWriter** que contiene métodos: write(String s) que nos permiten grabar String en un fichero. Si queremos añadir al final de un fichero ya existente, simplemente debemos poner un booleano a true como segundo parámetro del constructor de **FileWriter**.
+
+```java
+public static void main(String[] args) {
+  FileWriter fr = null;
+  BufferedWriter br = null;
+  String frase;
+  Scanner e = new Scanner(System.in);
+  frase = e.nextLine();
+  try {
+    fr = new FileWriter("otroFichero.txt", true);
+    br = new BufferedWriter(fr);
+    br.write(frase);
+    br.write(System.lineSeparator());
+  } catch (IOException ex) {
+    System.err.println(ex.toString());
+  } finally {
+    if (br != null)
+		  try {
+        br.close();
+      } catch (IOException ex) {
+        System.out.println("Error al cerrar");
+      }
+  }
+}
+```
+
+Una forma alternativa a escribir en un fichero línea a línea es utilizando la clase **PrintWriter** que contiene métodos: 
+- print(String s)
+- println(String s) 
+- o de otros tipos, 
+
+que nos permiten grabar una línea e incluye el salto de línea al final en un fichero. 
+
+```java
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  PrintWriter salida = null;
+  try {
+    salida = new PrintWriter("datos.txt"); 
+    String cadena;
+    System.out.println("Introduce texto:");
+    cadena = sc.nextLine(); 
+    while (!cadena.equalsIgnoreCase("FIN")) {
+      salida.println(cadena);  
+      cadena = sc.nextLine(); 
+    }
+    salida.flush();
+  } catch (FileNotFoundException e) {
+    System.out.println(e.getMessage());
+  } finally {
+    salida.close();
+  }
+}
+```
+
+Si queremos añadir al final de un fichero ya existente, simplemente debemos poner un booleano a true como segundo parámetro del constructor de FileWriter.
+
+```java
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  PrintWriter salida = null;
+  try {
+    salida = new PrintWriter(new FileWriter("datos.txt",true)); 
+    String cadena;
+    System.out.println("Introduce texto:");
+    cadena = sc.nextLine(); 
+    while (!cadena.equalsIgnoreCase("FIN")) {
+      salida.println(cadena);  
+      cadena = sc.nextLine(); 
+    }
+    salida.flush();
+  } catch (FileNotFoundException e) {
+    System.out.println(e.getMessage());
+  } catch (IOException ex) {
+    System.out.println(e.getMessage());
+  } finally {
+    salida.close();
+  }
+}
+```
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 3
+
+## FICHEROS BINARIOS
+
+Un fichero binario es aquel que el usuario no puede editarle directamente con un editor de texto y, cuando lo intentas abrir a través de ese medio, tiene símbolos que no se pueden leer directamente.
+
+Este tipoo de ficheros se utilizan cuando queremos trabajar con tipos de datos primitivos: bolean, byte, int, double,…. para después recuperarlos como tal.
+
+El paquete java.io proporciona las clases **DataOutputStream** y **DataInputStream** que derivan de la clase **OutputStream** y **InputStream** respectivamente y actúan como filtros. Lo utilizamos de la siguiente manera:
+
+- **DataOutputStream:**
+
+```java
+FileOutputStream f = new FileOutputStreasm ("fichero.dat");
+DataOutputStream g=new DataOutputStream(f);
+```
+
+Los métodos más utilizados de esta clase son:
+
+- writeBoolean(): Escribe un valor de tipo booleno
+- writeByte(): Escribe un valor de tipo byte
+- writeChar(): Escribe un valor de tipo char
+- writeShort(): Escribe un valor de tipo short
+- writeInt(): Escribe un valor de tipo int
+- writeLong(): Escribe un valor de tipo long
+- writeDouble(): Escribe un valor de tipo double
+- writeFloat(): Escribe un valor de tipo float
+- writeUTF(): Escribe una cadena de caracteres en formato UTF-8
+
+- **DataInputStream:**
+
+```java
+FileInputStream f = new FileInputStreasm ("fichero.dat");
+DataIntputStream g=new DataInputStream(f);
+```
+
+Sus métodos más utilizados son:
+- readBoolean(): Devuelve un valor de tipo booleno
+- readByte(): Devuelve un valor de tipo byte
+- readChar(): Devuelve un valor de tipo char
+- readShort(): Devuelve un valor de tipo short
+- readInt(): Devuelve un valor de tipo int
+- readLong(): Devuelve un valor de tipo long
+- readDouble(): Devuelve un valor de tipo double
+- readFloat(): Devuelve un valor de tipo float
+- readUTF(): Devuelve una cadena de caracteres en formato UTF-8
+
+Para este tipo de ficheros, primero se crean a través de un programa en Java, escribiendo los datos que se necesiten según las características del ejercicio. Vemos un ejemplo donde se crea un fichero donde se guarda el nombre y edad de una persona.
+
+```java
+public static void crear(File fichero) throws IOException {
+  String nombre;
+  int edad;
+  FileOutputStream f = null;
+  DataOutputStream fd = null;
+  boolean resp;
+  try {
+    f = new FileOutputStream(fichero); 
+    fd = new DataOutputStream(new BufferedOutputStream(f));    
+    do {
+      nombre = Teclado.IntroTexto("Introduce nombre: ");
+      edad = Teclado.IntroEntero("Introduce edad: ");
+      //lo grabamos en el fichero
+      fd.writeUTF(nombre);
+      fd.writeInt(edad);
+      resp = Teclado.IntroBoolean("Otro registro: ");
+    } while (resp);
+  } catch (IOException ex) {
+    System.out.println("error " + ex.toString());
+  } finally {
+    if (fd != null) {
+      fd.close();
+    }
+  }
+}
+```
+
+Una vez creado el fichero, se puede leer el contenido de dicho fichero. Para ello, la lectura de los datos del fichero ha de ser en el mismo orden y el mismo tipo de datos que como fue creado.
+
+```java
+public static void leer(File fichero) throws IOException {
+  String nombre;
+  int edad;
+  FileInputStream f = null;
+  DataInputStream fd = null;
+  boolean fin = false;
+  try {
+    //creamos un flujo hacia el fichero
+    f = new FileInputStream(fichero);
+    fd = new DataInputStream(new BufferedInputStream(f));
+    do {
+      nombre = fd.readUTF();
+      edad = fd.readInt();
+      System.out.println("Nombre = " + nombre);
+      System.out.println("Edad = " + edad);
+    } while (!fin);
+  } catch (EOFException eof) {
+    fin = true;
+  } catch (IOException ex) {
+    System.out.println("error " + ex.toString());
+  } finally {
+    if (fd != null) {
+    fd.close();
+    }
+  }
+}
+```
+
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 4
+
+:computer: Hoja de ejercicios 5
+
+## FICHEROS DE OBJETOS. SERIALIZACIÓN
+
+El hecho de poder guardar objetos en ficheros recibe el nombre de **Persistencia**. Para poder almacenar objetos de una clase en un fichero se necesita que la clase implemente la interfaz **Serializable**, y así los objetos se podrán guardar en ficheros. La interfaz Serializable no tiene ningún método para implementar, pero es obligatorio implementarlo para poder guardar objetos en un fichero.
+
+Los flujos que se utilizan para la lectura y escritura de ficheros de objetos son **ObjectInputStream** y **ObjectOutputStream**.
+
+Los métodos a utilizar son:
+
+- public Object readObject();
+- public void writeObject(Object obj);
+
+Vemos un ejemplo. Empezamos con la clase Coche:
+
+```java
+public class Coche implements Serializable {
+
+    private String marca;
+    private double velocidad;
+    private int gasolina;
+
+    public Coche(String marca, double velocidad, int gasolina) {
+        this.marca = marca;
+        this.velocidad = velocidad;
+        this.gasolina = gasolina;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Coche{" + "marca=" + marca + ", velocidad = " 
+                + velocidad + ", gasolina =" + gasolina + '}';
+    }
+}
+```
+
+El método escribir un objeto en el fichero:
+
+```java
+public static void Escribir(File f) {
+  ObjectOutputStream fo = null;
+  String marca="";
+  double velocidad;
+  int gasolina;
+  try {
+    if(f.exists()){
+      fo=new MiObjectOutputStream(new FileOutputStream(f,true));
+    }else{
+      fo = new ObjectOutputStream(new FileOutputStream(f));
+    }
+    marca=Teclado.pedirMarca();
+    velocidad=Teclado.pedirVelocidad();
+    gasolina=Teclado.pedirGasolina();
+    Coche c = new Coche(marca,velocidad,gasolina);
+    fo.writeObject(c);
+  } catch (IOException ex) {
+    System.err.println(ex.toString());
+  } finally {
+    if (fo != null) {
+      try {
+        fo.close();
+      } catch (IOException ex) {
+        System.out.println("Error de lectura");
+      }
+    }
+  }
+}
+```
+
+El método leer los objetos de un fichero:
+
+```java
+public static void Leer(File f) {
+  ObjectInputStream os = null;
+  try {
+    os = new ObjectInputStream(new FileInputStream(f));
+    Coche c;
+    while (true) {
+      c = (Coche) os.readObject();//Casting necesario 
+      System.out.println(c.toString());
+    }
+  } catch (EOFException e) {
+    System.out.println("Se alcanzó el final");
+  } catch (ClassNotFoundException e) {
+    System.out.println("Error el tipo de objeto no es compatible");
+  } catch (FileNotFoundException e) {
+    System.out.println("No se encontró el archivo");
+  } catch (IOException e) {
+    System.out.println("Error " + e.getMessage());
+  } finally {
+    if (os != null) {
+      try {
+        os.close();
+      } catch (IOException ex) {
+        System.out.println("Error al cerrar");
+      }
+    }
+  }
+}
+```
+
+Hasta aquí funciona todo bien si únicamente queremos escribir una única vez en el fichero. Cada vez que se crea un objeto ObjectOutputStream y escribimos en él, se escribe en el fichero una cabecera (para identificar el tipo de objeto serializado).
+Si llamamos varias veces a nuestro método escribirCoche anterior nos escribirá algo así en el fichero:
+
+![Ficheros](img/Imagen3.png)
+
+Al leer del fichero intentará realizar lo siguiente:
+
+![Ficheros](img/Imagen4.png)
+
+El primer objeto lo leerá bien, pero al intentar leer el 2º, cogerá una cabecera, intentará convertirlo a objeto y dará un error.
+
+¿Se os ocurre alguna solución? Posiblemente lo más sencillo sea mirar si existe el fichero. En caso que no exista, que cree cabeceras
+Si ya existe, que escriba únicamente objetos, sin cabeceras.
+
+Para la opción 1, en caso de que no exista el fichero, crearemos un objeto ObjectOutputStream.
+Para la opción 2, en caso que el fichero ya exista, crearemos un objeto ObjectOutputStreamSinCabeceras. Es una clase que tendremos que añadir a nuestros ejercicios que hereda de ObjectOutputStream, y lo único que hace es sobreescribir el método que imprime las cabeceras en el fichero. Si dejamos ese método vacío, no escribirá ninguna cabecera en el fichero.
+
+Vemos el ejercicio completo en el siguiente ejemplo.
+
+**Ejemplo:** EjemploSerializable
+
+
+
+
+
+
+
