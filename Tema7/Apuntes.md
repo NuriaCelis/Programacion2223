@@ -13,7 +13,7 @@ Para trabajar con ficheros en Java existen diferentes APIs diferentes. Por un la
 
 ## CLASES PARA TRABAJAR CON EL SISTEMA DE FICHEROS
 
-**API java.io**
+### API java.io
 
 Se introduce por primera vez en Java 1.0, actualmente consta de diferentes clases, pero nos vamos a centrar en la **clase File** que tiene específicamente para trabajar con el sistema de ficheros del sistema operativo:
 
@@ -45,7 +45,7 @@ if(f.exists()){
 
 :computer: Hoja de ejercicios 1
 
-**API java.nio**
+### API java.nio
 
 La API java.nio aparece para solucionar los problemas de la API java.io:
 
@@ -144,9 +144,9 @@ Las clases para trabajar con ficheros se encuentran en el paquete java.io, por l
 
 ## FICHEROS DE TEXTO
 
-**Gestión de ficheros de texto (Byte a byte)**
+### Gestión de ficheros de texto (Byte a byte)
 
-### Lectura de ficheros de texto byte a byte:
+**Lectura de ficheros de texto byte a byte**:
 
 La **clase InputStream** y sus hijas se utilizan para leer corrientes de datos byte a byte. Con la clase FileInputStream leemos de ficheros de texto de forma secuencial.
 
@@ -181,7 +181,7 @@ try {
 ```
 **Ejemplo:** LeerByteaByte
 
-### Escritura de ficheros de texto byte a byte
+**Escritura de ficheros de texto byte a byte**:
 
 La **clase OutputStream** y sus hijas se utilizan para escribir corrientes de datos byte a byte. Con la clase FileOutputStream escribimos en ficheros de texto de forma secuencial.
 
@@ -245,9 +245,9 @@ En este ejemplo hemos añadido palabra true después del nombre del fichero para
 
 :computer: Hoja de ejercicios 2
 
-**Gestión de ficheros de texto (Caracter a caracter)**
+### Gestión de ficheros de texto (Caracter a caracter)
 
-### Lectura de ficheros de texto caracter a caracter
+**Lectura de ficheros de texto caracter a caracter**
 
 La clase **Reader** y sus hijas se utilizan para leer corrientes de datos byte a byte. Podemos abrir un fichero de texto para leer usando la clase **FileReader**. Esta clase tiene métodos que nos permiten leer caracteres. Sin embargo, suele ser habitual querer las líneas completas, bien porque nos interesa la línea completa, bien para poder analizarla luego y extraer campos de ella. 
 
@@ -289,7 +289,7 @@ public static void main(String[] args) {
   }
 ```
 
-### Escritura de ficheros de texto caracter a caracter.
+**Escritura de ficheros de texto caracter a caracter**.
 
 Para escribir suele ser habitual hacer uso de la clase **BufferedWriter** que contiene métodos: write(String s) que nos permiten grabar String en un fichero. Si queremos añadir al final de un fichero ya existente, simplemente debemos poner un booleano a true como segundo parámetro del constructor de **FileWriter**.
 
@@ -610,7 +610,13 @@ Vemos el ejercicio completo en el siguiente ejemplo.
 
 **Ejemplo:** EjemploSerializable
 
+## EJERCICIOS
 
+:computer: Hoja de ejercicios 6
+
+:computer: Hoja de ejercicios 7
+
+:computer: Hoja de ejercicios 8
 
 
 
