@@ -151,7 +151,7 @@ Además de public, private y default en Java se dispone del modificador protecte
 
 Se heredan todos los métodos y propiedades protected y public (no se heredan los private ni los default). La subclase por su parte puede definir nuevos métodos y propiedades.
 
-|  | La misma clase | Otra clase del mismo paquete | Subclase de otro paquete | Otra clase de otro paquete |
+|  | La misma clase | Otra clase del mismo paquete | Subclase | Otra clase de otro paquete |
 | ------ | ------ | ------ | ------- | ------ |
 | public | X | X | X | X |
 | protected | X | X | X |  |
@@ -444,17 +444,16 @@ Una ventaja de estos métodos es que invocarles es más rápido porque al saber 
 ## INTERFACES
 
 ### Definición
+**¿Que son las interfaces?:** Una interfaz es un contrato de compromiso. La clase tiene que implementar los métodos abstractos que tenga dicha interface. Dicho de otro modo, una interface tiene un conjunto de operaciones que una clase se compromete a implementar. 
 
 Mediante interfaces se definen una serie de comportamientos de  objeto. Estos comportamientos puede ser implementados en un  determinado sitio.
 
-No definen el tipo de objeto que es, sino lo que pueden hacer (sus  capacidades). Por ello lo normal es que el nombre de las interfaces  terminen con el sufijo able (configurable, modificable, cargable).
+No definen el tipo de objeto que es, sino lo que pueden hacer (sus capacidades). Por ello lo normal es que el nombre de las interfaces  terminen con el sufijo able (configurable, modificable, cargable).
 
-**¿Que son las interfaces?:** Una interfaz es un contrato de compromiso. La clase tiene que implementar los métodos abstractos que tenga dicha interface. Dicho de otro modo, una interface tiene un conjunto de operaciones que una clase se compromete a implementar. 
+La interfaz contiene los métodos que deben ser sobrescritos indicando la firma de cada método. (Firma es la cabecera del método). Lo más habitual es que en ella se definan los métodos abstractos como sucedía antes de Java 8. A diferencia de las clases abstractas, en las interfaces no es necesario que los métodos abstractos lleven el abstract delante. (por defecto)
+Desde Java 8, pueden incluir también otro tipo de métodos con cuerpo (estáticos y por defecto). También puede incluir atributos que deben inicializarse (constantes). Lo veremos en un apartado posterior.
 
-La interfaz mediante su firma marca qué métodos deben ser sobrescritos. (Firma es la cabecera del método). Lo más habitual es que en ella se definan los métodos abstractos como sucedía antes de Java 8. No es necesario que estos lleven abstract delante. (por defecto)
-Desde Java 8, pueden incluir también métodos con cuerpo (abstractos, estáticos y por defecto). También puede incluir atributos que deben inicializarse (constantes).
-
-Usaremos la palabra reservada **Interface** para definir una interfaz. Se usan las misma normas de acceso (visibilidad) que para una clase, así como las mismas reglas de nombres que una clase.. 
+Usaremos la palabra reservada **Interface** para definir una interfaz. Se usan las misma normas de acceso (visibilidad) que para una clase, así como las mismas reglas de nombres que una clase.
 
 Una clase puede heredar interfaces (extends) y esta puede ser múltiple (podemos heredar de varios interfaces).
 
@@ -464,20 +463,26 @@ Vemos un ejemplo: Ejemplo1Interfaces (sin el main).
 
 ### Implementación en una clase.
 
-Usa implements (como el resto de herencias). Una clase puede implementar más de una interface (simulación de herencia múltiple). Las separado por comas. Es importante ver que no tienen porque existir una relación de herencia entre la clase que las implementa y la/s interfaces. (ES UN). Por ejemplo el método mostrar() de la Interface 2 lo puedo implementar en muchísimas clases.
+Cuando una clase quiere utilizar una interface, usa la palabra reservada implements. Una clase puede implementar más de una interface (simulación de herencia múltiple) separadas por comas. 
+
+Es importante ver que no tienen porque existir una relación de herencia entre la clase que las implementa y la/s interfaces. (ES UN). Por ejemplo el método mostrar() de la Interface 2 lo puedo implementar en muchísimas clases.
 
 ![Interfaces](img/Imagen13.png)
 
 ### Variables de interface.
 
-Las variables de interface no son objetos. Se parece su uso, pero en realidad son  variables que son capaces de hacer referencia a cualquier objeto de una clase que  haya implementado la interface. Es decir, una variable de la interface Arrancable puede utilizarse para hacer referencia a objetos de la clase Coche y de la clase  BombaAgua, ya que ambas son clases que implementan dicha interface.
+Podemos crear variables de interface. Estas variables de interface no son objetos. Son  variables que son capaces de hacer referencia a cualquier objeto de una clase que  haya implementado la interface. Es decir, una variable de la interface Arrancable puede utilizarse para hacer referencia a objetos de la clase Coche y de la clase  BombaAgua, ya que ambas son clases que implementan dicha interface.
 
 Esto permite cosas como:
 
 ```java
-Arrancable motorcito; //motorcito es una variable de tipo arrancable  Coche c=new Coche(); //Objeto de tipo coche
-BombaAgua ba=new BombaAgua(); //Objeto de tipo BombaAgua  motorcito=c; //Motorcito apunta al coche
-motorcito.arrancar(); //Se arrancará el coche  motorcito=ba; //Motorcito apunta a la bomba de agua  motorcito.arrancar(); //Se arranca la bomba de agua
+Arrancable motorcito; //motorcito es una variable de tipo arrancable  
+Coche c=new Coche(); //Objeto de tipo coche
+BombaAgua ba=new BombaAgua(); //Objeto de tipo BombaAgua  
+motorcito=c; //Motorcito apunta al coche
+motorcito.arrancar(); //Se arrancará el coche  
+motorcito=ba; //Motorcito apunta a la bomba de agua  
+motorcito.arrancar(); //Se arranca la bomba de agua
 ```
 
 El juego que dan estas variables es impresionante, manipulan todo tipo de objetos.  Eso facilita la escritura de métodos genéricos para clases que implementen la  misma interface
