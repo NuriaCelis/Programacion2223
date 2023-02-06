@@ -444,14 +444,15 @@ Una ventaja de estos métodos es que invocarles es más rápido porque al saber 
 ## INTERFACES
 
 ### Definición
-**¿Que son las interfaces?:** Una interfaz es un contrato de compromiso. La clase tiene que implementar los métodos abstractos que tenga dicha interface. Dicho de otro modo, una interface tiene un conjunto de operaciones que una clase se compromete a implementar. 
+**¿Que son las interfaces?:** Una interface tiene un conjunto de operaciones que una clase se compromete a implementar. Una interfaz es un contrato de compromiso. La clase tiene que implementar los métodos abstractos que tenga dicha interface. 
 
-Mediante interfaces se definen una serie de comportamientos de  objeto. Estos comportamientos puede ser implementados en un  determinado sitio.
+Mediante interfaces se definen una serie de comportamientos del objeto. Estos comportamientos puede ser implementados en un  determinado sitio.
 
 No definen el tipo de objeto que es, sino lo que pueden hacer (sus capacidades). Por ello lo normal es que el nombre de las interfaces  terminen con el sufijo able (configurable, modificable, cargable).
 
-La interfaz contiene los métodos que deben ser sobrescritos indicando la firma de cada método. (Firma es la cabecera del método). Lo más habitual es que en ella se definan los métodos abstractos como sucedía antes de Java 8. A diferencia de las clases abstractas, en las interfaces no es necesario que los métodos abstractos lleven el abstract delante. (por defecto)
-Desde Java 8, pueden incluir también otro tipo de métodos con cuerpo (estáticos y por defecto). También puede incluir atributos que deben inicializarse (constantes). Lo veremos en un apartado posterior.
+La interfaz contiene los métodos que deben ser sobrescritos indicando la firma de cada método. (Firma es la cabecera del método). Lo más habitual es que en la interfaz se definan métodos abstractos. A diferencia de las clases abstractas, en las interfaces no es necesario que los métodos abstractos lleven el abstract delante.
+
+Desde Java 8, pueden incluir también otro tipo de métodos con cuerpo (estáticos y por defecto). También puede incluir atributos que deben inicializarse (constantes). Esto lo veremos en un apartado posterior.
 
 Usaremos la palabra reservada **Interface** para definir una interfaz. Se usan las misma normas de acceso (visibilidad) que para una clase, así como las mismas reglas de nombres que una clase.
 
