@@ -532,8 +532,7 @@ Uso: me permite incluir el uso de los métodos estáticos que ya vienen implemen
 
 | INTERFACES | CLASES ABSTRACTAS |
 | ----- | ----- |
-| Clases no relacionadas podrán
-implementar los métodos. | Compartir código con clases muy relacionadas. |
+| Clases no relacionadas podrán implementar los métodos. | Compartir código con clases muy relacionadas. |
 | Si se quiere indicar que existe un tipo de comportamiento, pero no sabemos quien lo implementa. | Las clases derivadas usarán métodos protected o private. |
 | Si necesitamos tener herencia múltiple. | Queremos definir atributos que no sean estáticos o constantes. |
 
