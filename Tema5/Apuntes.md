@@ -16,7 +16,7 @@
     - [Definición](#definición)
     - [Implementación en una clase.](#implementación-en-una-clase)
     - [Variables de interface.](#variables-de-interface)
-    - [Tipos de métodos](#tipos-de-métodos)
+    - [Tipos de métodos que puede tener una Interface](#tipos-de-métodos-que-puede-tener-una-interface)
     - [Diferencias entre interfaces y clases abstractas](#diferencias-entre-interfaces-y-clases-abstractas)
   - [CLASE OBJECT](#clase-object)
   - [EJERCICIOS](#ejercicios-4)
@@ -490,7 +490,7 @@ El juego que dan estas variables es impresionante, manipulan todo tipo de objeto
 
 Vemos un ejemplo: Ejemplo1Interfaces (el main).
 
-### Tipos de métodos
+### Tipos de métodos que puede tener una Interface
 
 **Métodos por defecto:** Se utilizan poniendo la palabra reservada default. Es un método que ya tiene una implementación por defecto, descrita en la interface. 
 
