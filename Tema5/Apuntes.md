@@ -517,6 +517,9 @@ public interface Interfaz{
 
 Uso: me permite incluir el uso de los métodos estáticos que ya vienen implementados en interfaces de Java y poder usarlos sin problemas.
 
+Vemos un ejemplo: Estatico2
+
+
 ### Diferencias entre interfaces y clases abstractas
 
 | INTERFACES | CLASES ABSTRACTAS |
@@ -536,7 +539,6 @@ Uso: me permite incluir el uso de los métodos estáticos que ya vienen implemen
 | Si se quiere indicar que existe un tipo de comportamiento, pero no sabemos quien lo implementa. | Las clases derivadas usarán métodos protected o private. |
 | Si necesitamos tener herencia múltiple. | Queremos definir atributos que no sean estáticos o constantes. |
 
-Vemos un ejemplo: Estatico2
 
 ## CLASE OBJECT
 
