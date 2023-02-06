@@ -546,16 +546,20 @@ En Java todas las clases heredan de Object. Al ser superclase de todas las clase
 
 ```java
 public class Clase{
-public static void funcion(Object o){
-…
-}
+    public static void funcion(Object o){
+        …
+    }
 }
 ….
 public class D{
-public static void main(String args[] ){
-Clase.funcion(new String());  Clase.funcion (new int[7]);  Clase.funcion (new Clase());
-//todas las líneas son válidas. Al método estático funcion se le puede enviar cualquier
-//clase de objeto
+    public static void main(String args[] ){
+        Clase.funcion(new String());  
+        Clase.funcion (new int[7]);  
+        Clase.funcion (new Clase());
+        //todas las líneas son válidas. Al método estático funcion se le puede enviar cualquier
+        //clase de objeto
+    }
+}
 ```
 
 Otra ventaja es que Object posee una serie de métodos muy interesantes que todas las clases heredan.  Pero, normalmente, hay que redefinirlos para que funcionen adecuadamente adaptándolos a la clase  correspondiente.
