@@ -562,24 +562,28 @@ public class D{
 }
 ```
 
-Otra ventaja es que Object posee una serie de métodos muy interesantes que todas las clases heredan.  Pero, normalmente, hay que redefinirlos para que funcionen adecuadamente adaptándolos a la clase  correspondiente.
+Otra ventaja es que Object posee una serie de métodos muy interesantes que todas las clases heredan. Normalmente hay que redefinirlos para que funcionen adecuadamente, adaptándolos a la clase correspondiente.
 
 **Comparar objetos**
 
 La clase Object proporciona un método para comprobar si dos objetos son iguales. Este  método es equals. Este método recibe como parámetro un objeto con quien comparar y  devuelve true si los dos objetos son iguales.
+
 No es lo mismo equals que usar la comparación de igualdad. Ejemplo (suponiendo que se ha  definido correctamente el método equals):
 
 ```java
-Coche uno=new Coche(“Renault”,”Megane”,”P4324K”);
+Coche uno=new Coche("Renault","Megane","P4324K");
 Coche dos=uno; //dos y uno son referencias al mismo coche
+
 boolean resultado=(uno.equals(dos)); //Resultado valdrá true
 resultado=(uno==dos); //Resultado también valdrá true
+
 dos=new Coche(“Renault”,”Megane”,”P4324K”); //los mismos datos
+
 resultado=(uno.equals(dos)); //Resultado valdrá true
 resultado=(uno==dos); //Resultado ahora valdrá false
 ```
 
-En el ejemplo anterior equals devuelve true si los dos coches tienen el mismo modelo, marca y  matrícula . El operador “==” devuelve true si las dos referencias que se comparan apuntan al  mismo objeto.
+En el ejemplo anterior equals devuelve true si los dos coches tienen el mismo modelo, marca y  matrícula. El operador “==” devuelve true si las dos referencias que se comparan apuntan al mismo objeto.
 
 Realmente en el ejemplo anterior la respuesta del método equals sólo será válida si en la  clase que se está comparando (Coche en el ejemplo) se ha redefinido el método equals. Esto  no es opcional sino obligatorio si se quiere usar este método.
 
