@@ -466,7 +466,7 @@ Vemos un ejemplo: Ejemplo1Interfaces (sin el main).
 
 Cuando una clase quiere utilizar una interface, usa la palabra reservada implements. Una clase puede implementar más de una interface (simulación de herencia múltiple) separadas por comas. 
 
-Es importante ver que no tienen porque existir una relación de herencia entre la clase que las implementa y la/s interfaces. (ES UN). Por ejemplo el método mostrar() de la Interface 2 lo puedo implementar en muchísimas clases.
+Es importante ver que no tienen porque existir una relación de herencia entre la clase que las implementa y la/s interfaces. (ES UN). Por ejemplo el método mostrar() de la Interface2 lo puedo implementar en muchísimas clases.
 
 ![Interfaces](img/Imagen13.png)
 
