@@ -503,9 +503,9 @@ public interface Interfaz {
 
 La clase que lo implementa lo puede dejar como está, o lo puede sobrescribir. 
 
-Uso: supongamos que hemos desarrollado un proyecto en el que tenemos una interface de la que heredan muchas clases. Si necesitase incluir un nuevo método es esta, no me quedaría más remedio que sobrescribir todas las clases que la heredan, sobrescribiendo en ellas el nuevo método. La solución sería hacer el método default y solo sobrescribirla en la clase que la necesite.
+Uso: supongamos que hemos desarrollado un proyecto en el que tenemos una interface de la que heredan muchas clases. Si la implementación de dicho método es igual para la mayoría de las clases que la implementan y solo tengo que sobreescribirlo en unas pocas de clases, es más efectivo hacer un método por defecto, para todas las clases igual, y solo se sobreescribe la clase que tenga un comportamiento diferente.
 
-**Métodos estáticos:** Se utiliza la palabra reservada static (presentación - parte 1). Funciona como un método estático de clase, se puede llamar sin haber implementado la interfaz, poniendo el nombre de la interfaz.método(). Tienen la misma sintaxis que los métodos estáticos en clases 
+**Métodos estáticos:** Se utiliza la palabra reservada static. Funciona como un método estático de clase, se puede llamar sin haber implementado la interfaz, poniendo el nombre de la Interfaz.método(). Tienen la misma sintaxis que los métodos estáticos en clases 
 
 ```java
 public interface Interfaz{
