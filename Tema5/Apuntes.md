@@ -611,7 +611,7 @@ Vemos un ejemplo: EjemploEqualsYComparable
 
 **Método toString**
 
-Este es un método de la clase Object que da como resultado un  texto que describe al objeto. La utiliza, por ejemplo el método  println para poder escribir un método por pantalla. Normalmente  en cualquier clase habría que definir el método toString. Sin  redefinirlo el resultado podría ser:
+Este es un método de la clase Object que da como resultado un  texto que describe al objeto. Utiliza, por ejemplo, el método  println para poder escribir un método por pantalla. Normalmente  en cualquier clase habría que definir el método toString. Sin  redefinirlo el resultado podría ser:
 
 ```java
 Coche uno=new Coche();
