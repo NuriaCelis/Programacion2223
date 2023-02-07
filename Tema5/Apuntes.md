@@ -17,14 +17,15 @@
     - [Implementación en una clase.](#implementación-en-una-clase)
     - [Variables de interface.](#variables-de-interface)
     - [Tipos de métodos que puede tener una Interface](#tipos-de-métodos-que-puede-tener-una-interface)
+  - [EJERCICIOS](#ejercicios-4)
     - [Diferencias entre interfaces y clases abstractas](#diferencias-entre-interfaces-y-clases-abstractas)
   - [CLASE OBJECT](#clase-object)
-  - [EJERCICIOS](#ejercicios-4)
-  - [EXCEPCIONES EN JAVA](#excepciones-en-java)
   - [EJERCICIOS](#ejercicios-5)
-    - [Throws](#throws)
+  - [EXCEPCIONES EN JAVA](#excepciones-en-java)
   - [EJERCICIOS](#ejercicios-6)
+    - [Throws](#throws)
   - [EJERCICIOS](#ejercicios-7)
+  - [EJERCICIOS](#ejercicios-8)
 
 
 ## MIEMBROS ESTÁTICOS O DE CLASE EN JAVA
@@ -505,6 +506,10 @@ La clase que lo implementa lo puede dejar como está, o lo puede sobrescribir.
 
 Uso: supongamos que hemos desarrollado un proyecto en el que tenemos una interface de la que heredan muchas clases. Si la implementación de dicho método es igual para la mayoría de las clases que la implementan y solo tengo que sobreescribirlo en unas pocas de clases, es más efectivo hacer un método por defecto, para todas las clases igual, y solo se sobreescribe la clase que tenga un comportamiento diferente.
 
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 5 de Herencia. Ejercicio 1 y 2.
+
 **Métodos estáticos:** Se utiliza la palabra reservada static. Funciona como un método estático de clase, se puede llamar sin haber implementado la interfaz, poniendo el nombre de la Interfaz.método(). Tienen la misma sintaxis que los métodos estáticos en clases 
 
 ```java
@@ -629,7 +634,7 @@ Vemos un ejemplo: EjemploObject.
 
 ## EJERCICIOS
 
-:computer: Hoja de ejercicios 5 de Herencia.
+:computer: Hoja de ejercicios 5 de Herencia. Ejercicio 3 y 4.
 
 :computer: Hoja de ejercicios 6 de Herencia.
 
