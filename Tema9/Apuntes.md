@@ -1,3 +1,8 @@
+NOTA, PARA LOS DE PRIMERO VER SOLO APARTADOS 1, 2, 3, 4, 5, Y LUEGO 9 Y 10.1, JPQL BÁSICO
+HOJAS DE EJERCICIOS LA 1, 2, 6 Y 7.
+
+cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO EN BASES DE DATOS.
+
 - [1. Introducción](#1-introducción)
   - [1.1 El concepto de mapeo objeto-relacional](#11-el-concepto-de-mapeo-objeto-relacional)
   - [1.2 Características de las herramientas ORM](#12-características-de-las-herramientas-orm)
