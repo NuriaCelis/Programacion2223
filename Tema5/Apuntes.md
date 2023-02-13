@@ -23,7 +23,8 @@
   - [EJERCICIOS](#ejercicios-5)
   - [EXCEPCIONES EN JAVA](#excepciones-en-java)
   - [EJERCICIOS](#ejercicios-6)
-    - [Throws](#throws)
+    - [Throws y throw](#throws-y-throw)
+    - [Excepciones de usuario](#excepciones-de-usuario)
   - [EJERCICIOS](#ejercicios-7)
   - [EJERCICIOS](#ejercicios-8)
 
@@ -745,22 +746,20 @@ La clase Exception es la superclase de todos los tipos de excepciones. Esto perm
 
 :computer: Hoja de ejercicios 7 de Excepciones. Ejercicio 1 y 2.
 
-### Throws
+### Throws y throw
 
 En la orientación a objetos toda acción la realiza un método. Si llamamos a un método que puede generar un error, ¿quién la manejará? 
 ¿El propio método? ¿O el código que hizo la llamada al método?
 
 Con lo visto hasta ahora, sería el propio método quien se encargara de sus excepciones, pero esto complica el código ya que descentraliza el control de excepciones y dificulta el mantenimiento del código. Por eso otra posibilidad es hacer que la excepción la maneje el código que hizo la llamada. 
 
-Esto se hace añadiendo la palabra throws tras la primera línea de un método. Tras esa palabra se indica qué excepciones puede provocar el código del método. Si ocurre una excepción en el método, el código abandona ese método y regresa al código desde el que se llamó al método. Allí se posará en el catch apropiado para esa excepción. Ejemplo: 
+Esto se hace añadiendo la palabra **throws** tras la primera línea de un método. Tras esa palabra se indica qué excepciones puede provocar el código del método. Si ocurre una excepción en el método, el código abandona ese método y regresa al código desde el que se llamó al método. Allí se posará en el catch apropiado para esa excepción. Ejemplo: 
 
 ```java
 	void usarArchivo (String archivo) throws IOException, InterruptedException { 
 		... 
 	} 
 ```
-
-Vemos un ejemplo: Excepciones1 (Solo ejemplo3).
 
 En este caso se está indicando que el método usarArchivo puede provocar excepciones del tipo IOException y InterruptedException. Lo cual obliga a que el código que invoque a este método deba preparar el (o los) catch correspondientes. Para utilizar el método: 
 
@@ -779,7 +778,9 @@ En este caso se está indicando que el método usarArchivo puede provocar excepc
 	... 
 ```
 
-La instrucción throw nos permite provocar a nosotros una excepción (o lo que es lo mismo, crear artificialmente nosotros las excepciones). Ante: 
+Vemos un ejemplo: Excepciones1 (Solo ejemplo3).
+
+La instrucción **throw** nos permite provocar a nosotros una excepción (o lo que es lo mismo, crear artificialmente nosotros las excepciones). Ante: 
 
 ```java
 throw new Exception(); 
@@ -790,8 +791,8 @@ El flujo del programa se dirigirá a la instrucción try…catch más cercana. S
 ```java
 throw new Exception(“Error grave, grave”); 
 ```
-Eso construye una excepción con el mensaje indicado. 
-throw permite también relanzar excepciones. Esto significa que dentro de un catch podemos colocar una instrucción throw para lanzar la nueva excepción que será capturada por el catch correspondiente: 
+
+Eso construye una excepción con el mensaje indicado. **throw** permite también relanzar excepciones. Esto significa que dentro de un catch podemos colocar una instrucción throw para lanzar la nueva excepción que será capturada por el catch correspondiente: 
 
 ```java
 	try{ 
@@ -802,9 +803,44 @@ throw permite también relanzar excepciones. Esto significa que dentro de un cat
 		... 
 	} 
 ```
-El segundo catch capturará también las excepciones del primer tipo 
+El segundo catch capturará también las excepciones del primer tipo.
 
-Vemos un ejemplo: Excepciones1 (Solo ejemplo4).
+### Excepciones de usuario
+
+Podemos crear nuestras propias excepciones con solo heredar de alguna que ya exista. Además, es posible lanzarlas cuando nos interese por medio de la palabra reservada throw.
+
+Para definir una excepción, creamos una clase que herede de Exception. Dentro de la clase se sustituye los métodos que necesitemos, principalmente el toString, y ya podemos utilizar nuestra propia excepción.
+
+Vemos un ejemplo:
+ 
+ ```java
+ public class ExcepcionPersonalizada extends Exception{
+
+    
+    @Override
+    public String toString() {
+        return "toString redefinido "+super.toString(); 
+    }
+
+    @Override
+    public String getMessage() {
+        return "getMessage redefinido "+super.getMessage();
+    }
+    
+}
+```
+
+Ejemplo de uso de la excepción personalizada:
+
+```java
+try{
+    throw new ExcepcionPersonalizada();
+}catch(ExcepcionPersonalizada e){
+    System.out.println(e.toString());
+    }
+```
+
+Vemos un ejemplo: Excepciones1 (Solo ejemplo4 y ejemplo5).
 
 ## EJERCICIOS
 

@@ -1,71 +1,24 @@
-NOTA, PARA LOS DE PRIMERO VER SOLO APARTADOS 1, 2, 3, 4, 5, Y LUEGO 9 Y 10.1, JPQL BÁSICO
-HOJAS DE EJERCICIOS LA 1, 2, 6 Y 7.
 
-cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO EN BASES DE DATOS.
+# UNIDAD 9. PERSISTENCIA DE LOS OBJETOS
 
-- [1. Introducción](#1-introducción)
-  - [1.1 El concepto de mapeo objeto-relacional](#11-el-concepto-de-mapeo-objeto-relacional)
-  - [1.2 Características de las herramientas ORM](#12-características-de-las-herramientas-orm)
-- [2. Herramientas ORM. Hibernate](#2-herramientas-orm-hibernate)
-- [3. Primer proyecto](#3-primer-proyecto)
-  - [3.1 Requisitos previos](#31-requisitos-previos)
-  - [3.2 Creación del proyecto](#32-creación-del-proyecto)
-- [4. Mapeo de entidades](#4-mapeo-de-entidades)
-  - [4.1 Valores y entidades](#41-valores-y-entidades)
-  - [4.2 Mapeo](#42-mapeo)
-- [5. Mapeo de valores](#5-mapeo-de-valores)
-  - [5.1 Mapeo de columnas](#51-mapeo-de-columnas)
-  - [5.2 Tipos embebidos](#52-tipos-embebidos)
-- [6. Asociaciones](#6-asociaciones)
-  - [6.1 Many-to-one Unidireccional](#61-many-to-one-unidireccional)
-  - [6.2 One-to-many Unidireccional](#62-one-to-many-unidireccional)
-  - [6.3 One-to-many Bidireccional](#63-one-to-many-bidireccional)
-  - [6.4 One-to-one Unidireccional](#64-one-to-one-unidireccional)
-  - [6.5 One-to-one Bidireccional](#65-one-to-one-bidireccional)
-  - [6.6 Many-to-many Unidireccional](#66-many-to-many-unidireccional)
-  - [6.7 Many-to-many Bidireccional](#67-many-to-many-bidireccional)
-  - [6.8 Many-to-many con atributos extra](#68-many-to-many-con-atributos-extra)
-- [7. Herencia](#7-herencia)
-  - [7.1 @MappedSuperclass](#71-mappedsuperclass)
-  - [7.2 Table per Class](#72-table-per-class)
-  - [7.3 Single Table](#73-single-table)
-  - [7.4 Joined](#74-joined)
-- [8. Valores generados](#8-valores-generados)
-  - [8.1 @CreationTimestamp](#81-creationtimestamp)
-  - [8.2 @UpdateTimestamp](#82-updatetimestamp)
-  - [8.3 @ColumnTransformer](#83-columntransformer)
-- [9. Generación de esquemas](#9-generación-de-esquemas)
-  - [9.1 Ingeniería inversa. Generación de entidades a partir de una base de datos](#91-ingeniería-inversa-generación-de-entidades-a-partir-de-una-base-de-datos)
-  - [9.2 Ejemplo](#92-ejemplo)
-- [10. Consultas](#10-consultas)
-  - [10.1 JPQL básico](#101-jpql-básico)
-  - [10.2 Select en JPQL](#102-select-en-jpql)
-  - [10.3 Joins con JPQL](#103-joins-con-jpql)
-  - [10.4 Consultas de actualización](#104-consultas-de-actualización)
-  - [10.5 NamedQueries](#105-namedqueries)
-  - [10.6 Consultas con SQL nativo](#106-consultas-con-sql-nativo)
-
-
-# 1. Introducción
-
+## INTRODUCCIÓN
 
 * Aprenderemos a acceder a BD relacionales desde lenguaje OO Java intercambiando los datos de filas a través de objetos.
 * Necesitamos una interfaz que traduzca la lógica de los Objetos a la lógica relacional.
 * Se llama **ORM** y es la herramienta que sirve para transformar representaciones de datos de los SGBDR a Objetos.
 
-
-## 1.1 El concepto de mapeo objeto-relacional
+### El concepto de mapeo objeto-relacional
 
 * **Mapeo Objeto-Relacional**: técnica de programación para convertir datos entre sistemas OO y sistemas relacionales, usando un motor de persistencia.
 * En la práctica se crea una BD OO virtual sobre la base de datos relacional.
 * Nos permite usar características de la OO (herencia y polimorfismo).
 
 
-![](img/ut5-orm.png)
+![](img/imagen1.png)
 
 
 
-## 1.2 Características de las herramientas ORM
+### Características de las herramientas ORM
 
 * Las herramientas ORM permiten crear una capa de acceso a datos. 
 * La capa de acceso se encarga de la conversión de tablas del SGBD relacional a objetos y viceversa.
@@ -102,8 +55,7 @@ cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO 
 
 
 
-# 2. Herramientas ORM. Hibernate
-
+## HERRAMIENTAS ORM. HIBERNATE.
 
 * Algunos de los ORMs más conocidos para **Java** son:
   * Hibernate
@@ -129,7 +81,7 @@ cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO 
 * Con **Hibernate** no se usará SQL para acceder a datos sino que el propio motor de Hibernate construirá esas consultas por nosotros.
 * Tiene un lenguaje **HQL** para acceder a datos mediante POO.
 
-![](img/ut5-hibernate.png)
+![](img/imagen2.png)
 
 
 **Hibernate y JPA**
@@ -144,7 +96,7 @@ cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO 
 * Hibernate es mucho más grande que la especificación de JPA y añade más funcionalidad.
 
 
-![](img/ut5-jpa.png)
+![](img/imagen3.png)
 
 
 
@@ -176,133 +128,145 @@ cON ESO PARA PRIMERO ES SUFICIENTE, TODO LO QUE TENGO AQUÍ ES EL TEMA COMPLETO 
 * Para usar Para usar **JPA**, usaremos **hibernate-entitymanager** en lugar de hibernate-core
 
 ```xml
- <!-- Para usar JPA, usaremos hibernate-entitymanager en lugar de hibernate-core -->
+ <dependency>
+    <groupId>org.netbeans.modules</groupId>
+    <artifactId>org-netbeans-modules-j2ee-persistence</artifactId>
+    <version>RELEASE160</version>
+</dependency>   
+        
+        
+    
+```
+* Además, tenemos que añadir la dependencia para utilizar mysql:
+
+```xml
 <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-entitymanager</artifactId>
-    <version>5.6.1.Final</version>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.32</version>
 </dependency>
 ```
 
+## PRIMER PROYECTO
 
-# 3. Primer proyecto
+### Creación del proyecto
 
-
-## 3.1 Requisitos previos
-
-1. En primer lugar nos descargaremos como IDE [Spring Tool Suite for Eclipse](https://spring.io/tools)
-2. Añadiremos las **JBoss Tools**. Para ello vamos a Help > Eclipse Marketplace 
-   * Tan solo debemos seleccionar **Hibernate Tools**
-   
-
-## 3.2 Creación del proyecto
-
-* Crearemos un **Maven Project**.
-* Elegiremos **maven-archetype-quickstart** como Artifact Id (para ello podemos poner como filtro *org.apache.maven*)
-* Ahora podemos poner los siguientes datos:
-  * Group Id: es.ivanlorenzo (cámbialo por tu nombre)
-  * Artifact Id: PrimerProyecto
-  * Package: es.ivanlorenzo.primerproyecto
-
-
-* Después configuraremos la JDK instalada en nuestro sistema
+* Crearemos un **Maven Project** en NetBeans.
 * Debemos configurar las dependencias de JPA y de MySQL a nuestro proyecto
 
 ```xml
-<dependency>
-  <groupId>org.hibernate</groupId>
-  <artifactId>hibernate-entitymanager</artifactId>
-  <version>5.6.1.Final</version>
-</dependency>
-<dependency>
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-java</artifactId>
-  <version>8.0.27</version>
-</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.modules</groupId>
+            <artifactId>org-netbeans-modules-j2ee-persistence</artifactId>
+            <version>RELEASE160</version>
+        </dependency>
+    </dependencies>
 ```
 
-* En el proyecto vamos a Propiedades > **Project Facets** y le damos a **Convert to faceted form...**
-* Ahora marcamos JPA y en la configuración marcamos:
-  * Platform: Hibernate (JPA)
-  * JPA implementation: Disable Library Configuration
-  * Connection: podríamos elegir alguna si la tuviésemos configurada
+Para que nuestro proyecto sea JPA tenemos que añadir una unidad de persistencia, que se traduce en añadir un fichero **persistence.xml**.
 
-* Ahora nuestro proyecto es JPA. Podemos ver el fichero **persistence.xml**
+En NetBeans se añade con boton derecho en el proyecto donde estamos trabajando, New... Persistence Unit
 
+![](img/imagen4.png)
+
+En la siguiente ventana tenemos que poner un nombre a la Unidad de Persistencia y elegir la librería de persistencia que vamos a utilizar. 
+
+También hay que elegir la conexión a la base de datos que vamos a utilizar.
+
+En la estrategia de generación de la tabla se puede elegir entre tres opciones:
+- Create: si la tabla no existe en la base de datos, se crea.
+- Drop and create: Cada vez que ejecutas el programa, borra y vuelve a crear la tabla, borrando todos los datos que tuviera anteriormente. Indicado para cuando queremos hacer muchas pruebas con los mismo datos de entrada.
+- None: No hace nada con la tabla, pero es obligatorio que la tabla exista antes de ejecutar el ejercicio.
+
+En nuestro ejemplo:
+
+![](img/imagen5.png)
+
+Una vez creado el fichero persistence.xml se puede configurar a través de la ventana de diseño o a través del fichero xml que se genera en la siguiente estructura de carpetas dentro del proyecto:
+
+![](img/imagen6.png)
 
 * El fichero persistence.xml podemos configurarlo a través de las distintas pestañas o añadir el código directamente:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="PrimerProyecto" transaction-type="RESOURCE_LOCAL">
-		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3310/ejemplo"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="root"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.format_sql" value="true"/>
-			<property name="hibernate.hbm2ddl.auto" value="create"/>
-		</properties>
-	</persistence-unit>
-</persistence>
-```
+![](img/imagen7.png)
+
+
+![](img/imagen8.png)
 
 
 * Crearemos ahora nuestra primera **entidad**: Alumno
-* Le añadiremos las **anotaciones** necesarias
+* Le añadiremos las **anotaciones** necesarias. Cada una de las anotaciones obliga a importar la librería correspondiente. La clase debe implementar la interfaz Serializable.
 
 ```java
-package es.ivanlorenzo.primerproyecto.modelo;
+package ejemplos.ejemplo2;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ *
+ * @author Nuria
+ */
+ /*La anotación Entity es para declarar la clase como entidad*/
+/*La anotación Table es por si queremos poner otro nombre a la tabla distinto de la clase*/
 @Entity
-public class Alumno
-{
-	@Id
-	private int id;
-	
-	private String nombre;
-	
-	private float nota;
+@Table(name = "Alumno")
+public class Alumno implements Serializable{
+	/*La anotación Id es para decir que el primer atributo de la clase es clave principal.
+	Y en generated value, le decimos que el valor lo genere automáticamente. Con la estrategia que hemos elegido, nos generará los numeros correlativos: 1, 2, 3,...*/
+    @Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+    private String nombre;
+    private float nota;
 
-	public int getId()
-	{
-		return id;
-	}
+    public Alumno() {
+    }
 
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+    public Alumno(String nombre, float nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
 
-	public String getNombre()
-	{
-		return nombre;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setNombre(String nombre)
-	{
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public float getNota()
-	{
-		return nota;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setNota(float nota)
-	{
-		this.nota = nota;
-	}
+    public float getNota() {
+        return nota;
+    }
+
+    public void setNota(float nota) {
+        this.nota = nota;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "id=" + id + ", nombre=" + nombre + ", nota=" + nota + '}';
+    }
+    
+    
 }
+
 ```
 
-* **Añadimos la clase al archivo de persistencia**
+* **Añadimos la clase al archivo de persistencia.** Para ello vamos al archivo persistence.xml, y en la ventana de diseño se añade la clase con el botón Add Class
+
+![](img/imagen9.png)
 
 
 * En el método main:
@@ -315,30 +279,22 @@ public class Alumno
 
 
 ```java
-public class App 
-{
-    public static void main( String[] args )
-    {
-    	//Configuramos el EMF a través de la unidad de persistencia
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PrimerProyecto");
+public class Ejemplo2 {
+
+    public static void main(String[] args) {
+        //Configuramos el EMF a través de la unidad de persistencia
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("UnidadEjemplo2");
 
         //Generamos un EntityManager
         EntityManager em = emf.createEntityManager();
+        // Construimos un objeto Alumno
+        Alumno alumno1 = new Alumno("Pepe", 5);
+
+        // Construimos otro objeto Alumno
+        Alumno alumno2 = new Alumno("Maria", 6);
 
         //Iniciamos una transacción
         em.getTransaction().begin();
-
-        // Construimos un objeto Alumno
-        Alumno alumno1 = new Alumno();
-        alumno1.setId(1);
-        alumno1.setNombre("Pepe");
-        alumno1.setNota(5);
-
-        // Construimos otro objeto Alumno
-        Alumno alumno2 = new Alumno();
-        alumno2.setId(2);
-        alumno2.setNombre("María");
-        alumno2.setNota(9);
 
         //Persistimos los objetos
         em.persist(alumno1);
@@ -349,15 +305,17 @@ public class App
 
         //Cerramos el EntityManager
         em.close();
-
     }
 }
+
 ```
 
 * Y **ejecutamos** la aplicación como una **Java Application**
 
 
-> Hoja05_Hibernate_01
+## EJERCICIOS
+
+:computer: Hoja de ejercicios 1
 
 
 
