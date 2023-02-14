@@ -26,6 +26,7 @@
     - [Throws y throw](#throws-y-throw)
     - [Excepciones de usuario](#excepciones-de-usuario)
   - [EJERCICIOS](#ejercicios-7)
+  - [EXPRESIONES REGULARES EN JAVA](#expresiones-regulares-en-java)
   - [EJERCICIOS](#ejercicios-8)
 
 
@@ -864,6 +865,10 @@ La cláusula finally está pensada para limpiar el código en caso de excepción
 
 Las sentencias finally se ejecutan tras haberse ejecutado el catch correspondiente. Si ningún catch capturó la excepción, entonces se ejecutarán esas sentencias antes de devolver el control al siguiente nivel o antes de romperse la ejecución. 
 Hay que tener muy en cuenta que las sentencias finally se ejecutan independientemente de si hubo o no excepción. Es decir esas sentencias se ejecutan siempre, haya o no excepción. Son sentencias a ejecutarse en todo momento. Por ello se coloca en el bloque finally código común para todas las excepciones (y también para cuando no hay excepciones).
+
+## EXPRESIONES REGULARES EN JAVA
+
+[Expresiones regulares en Java.](Tema5\ExpresionesRegulares.md)
 
 ## EJERCICIOS
 
