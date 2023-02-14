@@ -857,7 +857,7 @@ La cláusula finally está pensada para limpiar el código en caso de excepción
 	}catch(IOException ioe){ 
 		... 
 	}catch(Exception e){ 
-		... 
+		...
 	}finally{ 
 		...//Instrucciones de limpieza 
 	} 
@@ -868,7 +868,7 @@ Hay que tener muy en cuenta que las sentencias finally se ejecutan independiente
 
 ## EXPRESIONES REGULARES EN JAVA
 
-[Expresiones regulares en Java.](Tema5\ExpresionesRegulares.md)
+[Expresiones regulares en Java.](Tema5/ExpresionesRegulares.md)
 
 ## EJERCICIOS
 
