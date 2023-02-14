@@ -868,7 +868,7 @@ Hay que tener muy en cuenta que las sentencias finally se ejecutan independiente
 
 ## EXPRESIONES REGULARES EN JAVA
 
-[Expresiones regulares en Java.](Tema5/ExpresionesRegulares.md)
+[Expresiones regulares en Java.](ExpresionesRegulares.md)
 
 ## EJERCICIOS
 
