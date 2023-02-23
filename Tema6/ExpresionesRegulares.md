@@ -1,7 +1,7 @@
-# Expresiones Regulares
+# UNIDAD 6. EXPRESIONES REGULARES
 
 ## Índice
-- [Expresiones Regulares](#expresiones-regulares)
+- [UNIDAD 6. EXPRESIONES REGULARES](#unidad-6-expresiones-regulares)
   - [Índice](#índice)
   - [Introducción](#introducción)
   - [Clases del paquete regex](#clases-del-paquete-regex)
@@ -20,9 +20,11 @@ Podemos definir una expresión regular como una secuencia de carácteres que for
 
 Por ejemplo, dentro de un texto queremos eliminar todas las palabras que sean «la» podemos usar un patrón para eliminarlas. Una expresión regular nos va a permitir buscar o reemplazar una secuencia. 
 
-A la expresión regular en Java que se abrevia como __regex__ Es una expresión que se utiliza para definir un patrón de búsqueda de cadenas.
+A la expresión regular en Java que se abrevia como __regex__. Es una expresión que se utiliza para definir un patrón de búsqueda de cadenas.
 
-El lenguaje Java no proporciona ninguna clase incorporada para expresiones regulares. Pero podemos trabajar con expresiones regulares importando el __java.util.regex__ paquete.
+El lenguaje Java no proporciona ninguna clase incorporada para expresiones regulares. Pero, podemos trabajar con expresiones regulares importando el paquete __java.util.regex__.
+
+<div class="page"/>
 
 ## Clases del paquete regex
 El paquete java.util.regex proporciona una interfaz y tres clases como se muestra a continuación:
@@ -51,6 +53,7 @@ public class Main {
   }
 }
 ```
+<div class="page"/>
 
 ## Crear expresiones regulares en java
 Para crear una expresión regular haremos uso de los cuantificadores y metacaracteres. 
@@ -81,9 +84,10 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 |\uxxxx|Encuentra el carácter Unicode especificado por el número hexadecimal xxxx|
 
 ### Ejemplos de expresiones regulares
-| Metacaracter | Descripción | 
+
+| Metacaracter | Descripción |
 | ------------- | ------------- |
-|[abc]|Establece la definición de la expresión, por ejemplo la expresión escrita haría match con a, b o c|
+|[abc]|Establece la definición de la expresión, por ejemplo, la expresión escrita haría match con a, b o c|
 |[abc][vz]|Establece una definición en la se hace match con a, b o c y a continuación va seguido por v o por z|
 |[^abc]|Cuando el símbolo ^aparece al principio de una expresión después de [, niega el patrón definido. En este caso hace match para todo menos para la a, la b o la c|
 |[e-f]|Cuando hacemos uso de -, definimos rangos. En este caso buscamos hacer match de una letra entre la e y la f|
