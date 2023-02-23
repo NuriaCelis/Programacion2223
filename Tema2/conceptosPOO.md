@@ -116,4 +116,5 @@ Ventajas Un buen diseño con alta cohesión y bajo acoplamiento:
 Siguiendo el ejemplo nuestros métodos solo realizan una tarea hablar, caminar, abordar y cada una de estas acciones son distintas. 
 
 [Resumen de Programación en lenguaje Java.Tema 7. Modularidad](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjBv7_Q8Ov6AhVMQRoKHdM2AuUQFnoECA0QAQ&url=https%3A%2F%2Focw.unican.es%2Fpluginfile.php%2F293%2Fcourse%2Fsection%2F228%2Fcap7-modularidad.pdf&usg=AOvVaw3cQ1GnxH3o3GODs9KRlz6H)
+
 [Resumen del artículo de José Manuel Alarcón](https://www.campusmvp.es/recursos/post/los-conceptos-fundamentales-sobre-programacion-orientada-objetos-explicados-de-manera-simple.aspx) 
