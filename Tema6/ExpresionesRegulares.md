@@ -36,6 +36,7 @@ El paquete java.util.regex proporciona una interfaz y tres clases como se muestr
 * Pattern: es la representación de la expresión regular.
 * PatternSyntaxException: lanza una Unchecked Exception para indicar un error de expresion en el patrón.
 Ejemplo: encontrar cualquier ocurrencia de la palabra prueba en una sentencia:
+
 ```java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
