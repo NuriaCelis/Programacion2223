@@ -128,7 +128,7 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 
 [Enlace a la documentación oficial de Java 18](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/regex/Pattern.html)
 
-:computer: Hoja de ejemplos(Ejemplo 9 -Expresiones Regulares)
+:computer: Hoja de ejemplos (EjemploExprReg)
 
 Tarea para casa: Diseña una clase Teclado con métodos estáticos donde se validen, haciendo uso de excepciones y uso de expresiones regulares, los siguientes métodos:
 
