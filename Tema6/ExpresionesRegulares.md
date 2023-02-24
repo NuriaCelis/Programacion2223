@@ -5,6 +5,7 @@
   - [Índice](#índice)
   - [Introducción](#introducción)
   - [Clases del paquete regex](#clases-del-paquete-regex)
+  - [El método matches en la clase String](#el-método-matches-en-la-clase-string)
   - [Crear expresiones regulares en java](#crear-expresiones-regulares-en-java)
     - [Cuantificadores para una expresión regular](#cuantificadores-para-una-expresión-regular)
     - [Metacaracteres en una expresión regular](#metacaracteres-en-una-expresión-regular)
@@ -35,6 +36,7 @@ El paquete java.util.regex proporciona una interfaz y tres clases como se muestr
 * MatchResult: el resultado de la operación al hacer match.
 * Pattern: es la representación de la expresión regular.
 * PatternSyntaxException: lanza una Unchecked Exception para indicar un error de expresion en el patrón.
+
 Ejemplo: encontrar cualquier ocurrencia de la palabra prueba en una sentencia:
 
 ```java
@@ -55,6 +57,35 @@ public class Main {
 }
 ```
 <div class="page"/>
+
+## El método matches en la clase String
+
+La clase String proporciona diferentes métodos para realizar operaciones con expresiones regulares, siendo la más simple la operación de concordancia. El método **matches** recibe una cadena que especifica la expresión regular, igualando el contenido del objeto String que llama al método con la expresión regular. Este método devuelve un booleano indicando si ha habido concordancia o no.
+
+El método matches de la clase String es equivalente a utilizar el método matches de la clase Pattern. Vemos un ejemplo para ver la equivalencia.
+
+```java
+import java.util.regex.Pattern;
+
+public class Main {
+    public static void main(String[] args){
+        String nombre;
+        nombre="Programacion";
+        //Comprobación con matches de String
+        if(nombre.matches("[A-Z][a-zA-Z]*")){
+            System.out.println("Nombre correcto");
+        }else{
+            System.out.println("No cumple el formato.");
+        }
+        //Misma comprobación con matches de Pattern
+        if(Pattern.matches("[A-Z][a-zA-Z]*", nombre)){
+            System.out.println("Nombre correcto");
+        }else{
+            System.out.println("No cumple el formato");
+        }
+    }
+}
+```
 
 ## Crear expresiones regulares en java
 Para crear una expresión regular haremos uso de los cuantificadores y metacaracteres. 
@@ -96,3 +127,11 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 |HO|Encuentra HO|
 
 :computer: Hoja de ejemplos(Ejemplo 9 -Expresiones Regulares)
+
+Tarea para casa: Diseña una clase Teclado con métodos estáticos donde se validen, haciendo uso de excepciones, los siguientes métodos:
+
+- IntroEntero
+- IntroDouble
+- IntroNombre
+- IntroBoolean
+- IntroFecha
