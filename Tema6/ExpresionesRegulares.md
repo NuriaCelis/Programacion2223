@@ -100,7 +100,7 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 |n*|Encuentra cero o más ocurrencias de n|
 |n?|Encuentra en el string la aparición de n cero o una vez|
 |n{x}|Encuentra la secuencia de n tantas veces como indica x|
-|n{x,}|Encuentra una secuencia de X tantas veces como indica n|
+|n{x,}|Encuentra una secuencia de n al menos tantas veces como indica x|
 
 ### Metacaracteres en una expresión regular
 
@@ -125,6 +125,8 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 |[e-f]|Cuando hacemos uso de -, definimos rangos. En este caso buscamos hacer match de una letra entre la e y la f|
 |Y\|X|Establece un OR, encuentra la Y o la X|
 |HO|Encuentra HO|
+
+[Enlace a la documentación oficial de Java 18](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/regex/Pattern.html)
 
 :computer: Hoja de ejemplos(Ejemplo 9 -Expresiones Regulares)
 
