@@ -128,7 +128,7 @@ Tenemos caracteres especiales que nos van a indicar el número de repeticiones d
 
 :computer: Hoja de ejemplos(Ejemplo 9 -Expresiones Regulares)
 
-Tarea para casa: Diseña una clase Teclado con métodos estáticos donde se validen, haciendo uso de excepciones, los siguientes métodos:
+Tarea para casa: Diseña una clase Teclado con métodos estáticos donde se validen, haciendo uso de excepciones y uso de expresiones regulares, los siguientes métodos:
 
 - IntroEntero
 - IntroDouble
