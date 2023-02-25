@@ -256,6 +256,8 @@ La interfaz principal es Collection, y tiene a su vez tres interfaces hijas. Cad
 * Las listas son lineales, hay posibilidad de ordenarlas, y sus elementos pueden estar repetidos.
 * Los conjuntos (set) no soportan elementos repetidos y hay posibilidad de ordenar sus elementos.
 * Las colas (queue) funcionan como su nombre indica, el primer elemento que llega es el primer elemento que sale, (como en la cola del cine).
+
+Los métodos más importantes de la interfaz Collection son los siguientes:
   
 | Nombre | Uso | 
 | ------------- | ------------- |
@@ -273,12 +275,15 @@ La interfaz principal es Collection, y tiene a su vez tres interfaces hijas. Cad
 Existen dos modos para recorrer las colecciones:
 
 * Bucle for-each
+
 ```java
   for( String elemento:collection){
     system.out.println(elemento);
   }   
 ```      
+
 * Mediante iteradores
+  
 ```java
 Iterator <String> iterator = collection.iterator();
 while (iterator.hasNext()){
@@ -286,6 +291,8 @@ while (iterator.hasNext()){
     system.out.println(cadena);
 }
 ```
+:computer: Hoja de ejemplos (EjemploCollection)
+
  ### Interface List
 
 * Los elementos tienen posición
