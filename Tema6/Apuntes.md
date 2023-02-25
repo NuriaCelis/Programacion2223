@@ -315,6 +315,8 @@ while (iterator.hasNext()){
 	List<String> cars = new ArrayList<>();
 ```
 
+Métodos más importantes de la interface List.
+
 | Nombre | Uso |
 | ------------- | ------------- |
 |add|Inserta un objeto. Devuelve true si lo inserta|
@@ -324,11 +326,14 @@ while (iterator.hasNext()){
 |indexOf|Devuelve la posición del elemento. Si no lo encuentra, devuelve -1|
 |lastIndexOf|devuelve la posición del elemento comenzando a buscarle por el final. Si no lo encuentra, devuelve -1|
 
+:computer: Hoja de ejemplos (EjemploList)
+
 ### Interface Queue
 
 * Una cola es una estructura de datos de tipo FIFO (First input, First Output)
 * Una cola está diseñado para que los elementos sean insertados al final de la cola, y los elementos eliminados sean los del principio de la cola.
 * se implementa para gestionarla con la clase __LinkedList__
+
 ```java
 //Declarar una Queue:
 Queue<nombreClase> nombreCola;
@@ -337,6 +342,7 @@ nombreCola = new LinkedList();
 //Como suele ser habitual, se puede declarar la lista a la vez que se crea:
 Queue<nombreClase> nombreCola = new LinkedList();
 ```
+Los métodos más importantes de la interfaz queue son los siguientes: 
 
 | Nombre | Uso |
 | ------------- | ------------- |
@@ -386,7 +392,7 @@ En el caso de __implementar colas__,los nuevos elementos se añaden por la cola,
 
 ![imagen cola](img/Cola.svg)
 
-:computer: Hoja de ejemplos (Ejemplo1 - colecciones, Ejemplo2 -listas, Ejemplo3 - listas de objetos ordenadas)
+:computer: Hoja de ejemplos (EjemploListasOrdenadas)
 
 :computer: Hoja de ejercicios de colecciones 1
 
