@@ -246,7 +246,7 @@ Estamos declarando una variable de tipo Contenedor de tipo numérica, es decir, 
 La interface fundamental de trabajo con estructuras dinámicas es java.util.Collection. Es la raíz del funcionamiento de las colecciones y representa objetos que tienen la capacidad de almacenar listas de otros objetos. 
 
 Están implementadas con dos versiones
-* Utilizando **Genericidad**: Collection <E>
+* Utilizando **Genericidad**: Collection<E>
 * Utilizando **Polimorfismo**: Collection
   
 ![interfaces de colecciones](img/interfaceCollection.png)
