@@ -293,7 +293,7 @@ while (iterator.hasNext()){
 ```
 :computer: Hoja de ejemplos (EjemploCollection)
 
- ### Interface List
+### Interface List
 
 * Los elementos tienen posición
 * Permite __duplicados__
