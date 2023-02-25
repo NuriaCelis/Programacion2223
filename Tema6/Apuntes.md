@@ -125,6 +125,13 @@ Contenedor<Double> contenedor3= new Contenedor<>();
 //contenedor de clientes, partimos que tenemos una clase cliente
 Contenedor<Cliente> contenedor4= new Contenedor<>();
 ```
+
+:computer: Hoja de ejemplos (EjemploGenerico)
+
+[Enlace a la API Java 18. Interfaz Comparable](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Comparable.html)
+
+[Enlace a la API Java 18. Interfaz Comparator](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/Comparator.html)
+
 En general, se usa la letra T para el tipo genérico, U para arrays, E para elementos de colecciones, K para claves, V para valores o N para números.
 
 Ya hemos comentado la intefaz Comparable de java. Otra interfaz que ha sido redefinida con tipos genéricos es __Comparator__.
@@ -149,20 +156,21 @@ public interface Comparator<T>{
 
 ```
 ### Parámetros genéricos limitados
-A veces las operaciones solo tienen sentido para determinados tipos de T.
-Por ejemplo operación aritmética entre valores de tipo T, entonces no puede ser String, ni Estudiante.
+A veces las operaciones solo tienen sentido para determinados tipos de T. Por ejemplo, si queremos hacer una operación aritmética entre valores de tipo T, entonces no puede ser String, ni Estudiante.
 
 La idea es que se limiten los posibles tipos de T a una determinada clase claseLimite y todas sus subclases ( si claseLimite es un límite superior) o todas sus superclases( si claseLimite es un límite inferior)
 
  ![parametros genéricos limitados](img/limitados.png)
 
 * Si claseLimite es un límite superior, definiremos:
+  
 ```java
 class nombreClase <T extends claseLimite>
 ```
 Significa que T puede ser claseLimite o cualquiera de sus subclases
 
 * Si clase claseLimite es un limite inferior, definiremos:
+  
 ```java
 class nombreClase <T super claseLimite>
 ```
@@ -170,12 +178,13 @@ Significa claseLimite y todas sus superclases
 
 ### Métodos genéricos
 
-Normalmente implementados dentro de clases o interfaces genéricas. Sin embargo, dentro de cualquier clase, podemos implementar métodos con sus propios parámetros genéricos.
+Normalmente los métodos genéricos aparecen implementados dentro de clases o interfaces genéricas. Sin embargo, dentro de cualquier clase, podemos implementar métodos con sus propios parámetros genéricos.
 
 <div class="page"/>
 
 Ejemplo, vamos a implementar un método que nos devuelve el número de elementos null que hay en un vector que se le pasa como argumento.
-El tipo U del vector es genérico, y se declara en la definición del método, justo antes del tipo de dato devuelto
+El tipo U del vector es genérico, y se declara en la definición del método, justo antes del tipo de dato devuelto.
+
 ```java
 public static <U> int numeroDeNulos( U[] vector){
     int cont=0;
@@ -190,7 +199,9 @@ public static <U> int numeroDeNulos( U[] vector){
 ### Comodines o wildcards
 Los comodines se suelen usar en la declaración de atributos, variables locales o parámetros pasados a un método.
 __Un comodín se representa con un símbolo ? Significa cualquier tipo__
+
 Ejemplo
+
 ```java
 Contenedor<?> contenedor;
 ```
@@ -199,12 +210,14 @@ Hemos declarado una variable contenedor de tipo Contenedor cuyo parámetro gené
 Esto significa que todos los objetos Contenedor pertenecen a alguna subclase de Contenedor<?>, como por ejemplo un contenedor de enteros o contenedor de cliente declarados anteriormente.
 
 Un comodín también se puede usar en la clase limite superior
+
 ```java
 <? extends T>;
 ```
 Significa cualquier clase que herede de T, incluyendo a esta.
 
 Un comodín para limitar una clase limite inferior
+
 ```java
 <? super T>;
 ```
