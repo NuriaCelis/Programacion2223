@@ -246,10 +246,16 @@ Estamos declarando una variable de tipo Contenedor de tipo numérica, es decir, 
 La interface fundamental de trabajo con estructuras dinámicas es java.util.Collection. Es la raíz del funcionamiento de las colecciones y representa objetos que tienen la capacidad de almacenar listas de otros objetos. 
 
 Están implementadas con dos versiones
-* Utilizando **Genericidad**: Collection<E>
+* Utilizando **Genericidad**: Collection\<E\>
 * Utilizando **Polimorfismo**: Collection
+
+La interfaz principal es Collection, y tiene a su vez tres interfaces hijas. Cada una de ellas representa distintos tipos de colecciones que funcionan de determinada manera.
   
 ![interfaces de colecciones](img/interfaceCollection.png)
+
+* Las listas son lineales, hay posibilidad de ordenarlas, y sus elementos pueden estar repetidos.
+* Los conjuntos (set) no soportan elementos repetidos y hay posibilidad de ordenar sus elementos.
+* Las colas (queue) funcionan como su nombre indica, el primer elemento que llega es el primer elemento que sale, (como en la cola del cine).
   
 | Nombre | Uso | 
 | ------------- | ------------- |
