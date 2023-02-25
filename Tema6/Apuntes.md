@@ -43,13 +43,16 @@ El número de interfaces, clases abstractas y clases disponibles para la creaci�
 
 La clasificación en dos grupos:
 * Lineales
+
   ![estructuras dinámicas lineales](img/lineales.png)
+
 * No lineales
+
   ![estructuras dinámicas no lineales](img/nolineales.png)
 
 ## Las interfaces 
 
-__Las estructuras dinámicas__ se implementan __por medio de interfaces__.  Una interfaz en java es una colección de métodos abstractos y propiedades constantes. En las interfaces se especifica qué se debe hacer pero, no su implementación. Serán las clases que implementen estas interfaces las que describen la lógica del comportamiento de los métodos.
+__Las estructuras dinámicas__ se implementan __por medio de interfaces__.  Una interfaz en java es una colección de métodos abstractos y propiedades constantes. En las interfaces se especifica qué se debe hacer pero no su implementación. Serán las clases que implementen estas interfaces las que describen la lógica del comportamiento de los métodos.
 
 ![interfaces de estructuras dinámicas ](img/estructuras.png)
 
@@ -65,8 +68,9 @@ Ambas interfaces están pensadas para comparar objetos de cualquier clase.
 Implementamos Comparable para cualquier clase de objetos que insertemos en cualquier colección que pretendamos ordenar.
 
 __Implementando genéricos__ si hay __error__ se manifiesta durante __la compilación__
+
 ```java
-	class Estudiante implements Comparable<Estudiante>{
+class Estudiante implements Comparable<Estudiante>{
 
     public int compareTo( Estudiante o){
         return this.nombre.compareTo(o.nombre);
@@ -125,7 +129,7 @@ En general, se usa la letra T para el tipo genérico, U para arrays, E para elem
 
 Ya hemos comentado la intefaz Comparable de java. Otra interfaz que ha sido redefinida con tipos genéricos es __Comparator__.
 
-Ejemplo Implementar una clase comparadora para ordenar los estudiantes por orden alfabético de nombres.
+Ejemplo: Implementar una clase comparadora para ordenar los estudiantes por orden alfabético de nombres.
 ```java
 public class ComparaNombres  implements Comparator<Estudiante>{
     @override
