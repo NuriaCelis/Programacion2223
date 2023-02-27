@@ -34,6 +34,6 @@ El analizador SAX no carga ningún archivo XML en la memoria. No crea ninguna re
 
 SAX es una interfaz de transmisión para XML, lo que significa que el archivo XML analiza en orden secuencial comenzando en la parte superior del documento y terminando con el cierre del elemento raíz.
 
-:computer: Hoja de ejemplos(Ejemplo10 -Java XML)
+:computer: Hoja de ejemplos(EjemploJava XML)
 
 :computer:Hoja 01 de XML
