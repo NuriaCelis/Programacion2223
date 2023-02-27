@@ -115,6 +115,6 @@ Los Stream son objetos que implementan la interfaz . Por tanto, La clase Stream 
 
 Los Stream se han diseñado para trabajar con expresiones lambda.
 
-:computer: Hoja de ejemplos(Ejemplo8 -Streams)
+:computer: Hoja de ejemplos(EjemploStreams)
 
-:computer: Hoja de ejercicios stream 1 y 2
+:computer: Hoja de ejercicios Stream 1 y 2
