@@ -67,7 +67,7 @@ Ambas interfaces están pensadas para comparar objetos de cualquier clase.
 
 Implementamos Comparable para cualquier clase de objetos que insertemos en cualquier colección que pretendamos ordenar.
 
-__Implementando genéricos__ si hay __error__ se manifiesta durante __la compilación__
+__Implementando genéricos__ si hay __error__ se manifiesta durante __la compilación__:
 
 ```java
 class Estudiante implements Comparable<Estudiante>{
@@ -77,18 +77,19 @@ class Estudiante implements Comparable<Estudiante>{
     }
 }
 ```
-__Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato del parámetro no se manifiesta durante la compilación, sino __en tiempo de ejecución__, lanzando una excepción
+__Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato del parámetro no se manifiesta durante la compilación, sino __en tiempo de ejecución__, lanzando una excepción:
 
 <div class="page"/>
 
 ```java
 	class Estudiante implements Comparable{
 
-       public int compareTo( Estudiante o){
-        return this.nombre.compareTo(o.nombre);
+       public int compareTo( Object o){
+        return this.nombre.compareTo(((Estuciante)o).nombre);
     }
 }
 ```
+
 ### Clases con parámetros genéricos
 Ejemplo:una clase Contenedor que sirva para todo tipo de objetos y que a su vez permita en cada caso ese tipo => __Una clase contenedor con tipo genérico T__
 
