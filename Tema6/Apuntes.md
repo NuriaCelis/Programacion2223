@@ -91,9 +91,13 @@ __Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato 
 ```
 
 ### Clases con parámetros genéricos
-Ejemplo:una clase Contenedor que sirva para todo tipo de objetos y que a su vez permita en cada caso ese tipo => __Una clase contenedor con tipo genérico T__
+
+Si queremos crear una clase que permita trabajar con todo tipo de objetos, es necesario declarar esa clase como genérica. Veremos con un ejemplo como se implementa esta genericidad en Java.
+
+Ejemplo:una clase Contenedor que sirva para todo tipo de objetos y que a su vez permita controlar en cada caso ese tipo => __Una clase contenedor con tipo genérico T__
 
 __T representa el tipo de datos__ que va usar la clase en cada declaración concreta, y __tiene que ser clase o interfaz, nunca un tipo primitivo__.
+
 ```java
 public class Contenedor<T>{
     // atributo
@@ -115,7 +119,9 @@ public class Contenedor<T>{
     }
 }
 ```
+
 Podemos utilizarlo para crear un Contenedor para enteros, para numeros reales o de clientes. La sintaxis es:
+
 ```java
 //contenedor de enteros
 Contenedor<Integer> contenedor1= new Contenedor<Integer>();
@@ -156,6 +162,7 @@ public interface Comparator<T>{
 }
 
 ```
+
 ### Parámetros genéricos limitados
 A veces las operaciones solo tienen sentido para determinados tipos de T. Por ejemplo, si queremos hacer una operación aritmética entre valores de tipo T, entonces no puede ser String, ni Estudiante.
 
@@ -433,11 +440,12 @@ La naturaleza de las tablas hash hace que cuando se crean listas HashSet, no hab
 Se trata de una clase heredera de la anterior con los mismos métodos y funciones, pero que consigue mantener el __orden en el que los datos fueron insertados__.
 Sigue necesitando __hashCode y equals__ en la clase.
 
-:computer: Hoja de ejemplos (Ejemplo 4- HashSet y LinkedHashSet)
+:computer: Hoja de ejemplos (EjemploHashSetYLinkedHashSet)
 
 :computer: Hoja de ejercicios de colecciones 3
 
 ### Interface SortedSet
+
 La interfaz SortedSet es la encargada de definir __una estructura en arbol__. 
 Esta interfaz deriva de __Collection__ y añade estos métodos:
 
@@ -450,6 +458,7 @@ Esta interfaz deriva de __Collection__ y añade estos métodos:
 |subSet|Devuelve la posición del elemento en el árbol (-1 significa que no lo ha encontrado)|
 
 #### Estructura en Árbol. Lista ordenada
+
 Un árbol es una estructura en la que los datos se organizan en nodos los cuales se relacionan con dos o más nodos. En general se utilizan para ordenar datos y en ese caso de cada nodo sólo pueden colgar otros dos de modo que a la izquierda cuelgan valores menores y a la derecha valores mayores. 
 
 Al recorrer esta estructura, los datos aparecen automáticamente en el orden correcto. La adición de elementos es más lenta, pero su recorrido ordenado es mucho más eficiente. 
@@ -466,7 +475,7 @@ Esta interfaz define el __método compareTo__ que utiliza como argumento un obje
 
 Con lo cual __los objetos a incluir en un TreeSet deben implementar Comparable y esto les obliga a redefinir el método compareTo__
 
-:computer: Hoja de ejemplos (Ejemplo 5- TreeSet)
+:computer: Hoja de ejemplos (EjemploTreeSet)
 
 :computer: Hoja de ejercicios de colecciones 4
 
@@ -498,7 +507,7 @@ nombreMap.values();// Devuelve una colección con los valores el Map
    
 * __LinkedHashMap__: Inserta en el Map los elementos en el orden en el que se van insertando; es decir, que no tiene una ordenación de los elementos como tal, por lo que esta clase realiza las búsquedas de los elementos de forma más lenta que las demás clases. 
 
-:computer: Hoja de ejemplos (Ejemplo 6- de las clases de la interfaz Map)
+:computer: Hoja de ejemplos (EjemploMap)
 
 :computer: Hoja de ejercicios de colecciones 5
 
