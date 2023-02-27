@@ -66,7 +66,7 @@ Comparator<Cliente> compCliNombre=(Cliente c1, Cliente c2)->{return c1.nombre.Co
 // se puede resumir la sentencia en 
 Comparator<Cliente> compCliNombre=(c1,c2)->{return c1.nombre.CompareTo(c2.nombre);};
 ```
-:computer: Hoja de ejemplos (Ejemplo3 - listas de objetos ordenadas y Ejemplo7 -expresiones lambda)
+:computer: Hoja de ejemplos (EjemploListasOrdenadas y EjemploExpresionesLambda)
 
 <div class="page"/>
 
