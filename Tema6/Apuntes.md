@@ -89,6 +89,9 @@ __Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato 
     }
 }
 ```
+
+¿Que es mejor, tener errores en tiempo de compilación o de ejecución?
+
 :computer: Hoja de ejemplos (EjemploGenerico, solo el package ejemplo genérico)
 
 ### Clases con parámetros genéricos
