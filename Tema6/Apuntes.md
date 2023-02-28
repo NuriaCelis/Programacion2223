@@ -61,7 +61,7 @@ __Las colecciones__ trabajan con tipos de __datos genéricos__.
 
 El uso de los tipos genéricos obedece a la necesidad de disponer de clases, interfaces o métodos que se puedan usar con muchos tipos de datos distintos, pero haciendo __comprobaciones de tipo en tiempo de compilación__.
 
-Ejemplos son los métodos de comparación, compareTo() y compare(), que aparecen en las interfaces Comparable y Comparator respectivamente.
+Ejemplos de uso de datos genéricos son los métodos de comparación, compareTo() y compare(), que aparecen en las interfaces Comparable y Comparator respectivamente.
 
 Ambas interfaces están pensadas para comparar objetos de cualquier clase.
 
