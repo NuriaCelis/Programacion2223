@@ -150,6 +150,7 @@ Ya hemos comentado la intefaz Comparable de java. Otra interfaz que ha sido rede
 Ejemplo: Implementar una clase comparadora para ordenar los estudiantes por orden alfabético de nombres.
 ```java
 public class ComparaNombres  implements Comparator<Estudiante>{
+    
     @override
     public int compare(Estudiante e1, Estudiante e2){
         return e1.getNombre().compareTo(e2.getNombre());
@@ -162,7 +163,7 @@ public interface Comparable<T>{
     int compareTo(T o);
 }
 public interface Comparator<T>{
-    in compare( T o1, T o2);
+    int compare( T o1, T o2);
 }
 
 ```
