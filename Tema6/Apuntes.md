@@ -72,7 +72,7 @@ __Implementando genéricos__ si hay __error__ se manifiesta durante __la compila
 ```java
 class Estudiante implements Comparable<Estudiante>{
 
-    public int compareTo( Estudiante o){
+    public int compareTo(Estudiante o){
         return this.nombre.compareTo(o.nombre);
     }
 }
@@ -84,7 +84,7 @@ __Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato 
 ```java
 	class Estudiante implements Comparable{
 
-       public int compareTo( Object o){
+       public int compareTo(Object o){
         return this.nombre.compareTo(((Estuciante)o).nombre);
     }
 }
