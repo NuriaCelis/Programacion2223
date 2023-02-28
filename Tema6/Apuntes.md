@@ -89,6 +89,7 @@ __Sin implementar parámetros genéricos__ si hay __error__ con el tipo de dato 
     }
 }
 ```
+:computer: Hoja de ejemplos (EjemploGenerico, solo el package ejemplo genérico)
 
 ### Clases con parámetros genéricos
 
@@ -133,7 +134,7 @@ Contenedor<Double> contenedor3= new Contenedor<>();
 Contenedor<Cliente> contenedor4= new Contenedor<>();
 ```
 
-:computer: Hoja de ejemplos (EjemploGenerico)
+:computer: Hoja de ejemplos (EjemploGenerico, el package ejemplo genérico 2)
 
 [Enlace a la API Java 18. Interfaz Comparable](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Comparable.html)
 
