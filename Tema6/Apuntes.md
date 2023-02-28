@@ -65,7 +65,7 @@ Ejemplos de uso de datos genéricos son los métodos de comparación, compareTo(
 
 Ambas interfaces están pensadas para comparar objetos de cualquier clase.
 
-Implementamos Comparable para cualquier clase de objetos que insertemos en cualquier colección que pretendamos ordenar.
+Ya sabemos que debemos implementar Comparable para cualquier clase de objetos que insertemos en cualquier estructura, tanto estática como dinámica, que pretendamos ordenar.
 
 __Implementando genéricos__ si hay __error__ se manifiesta durante __la compilación__:
 
