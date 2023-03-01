@@ -13,8 +13,8 @@
     - [Cosas que no se pueden hacer con parámetros genéricos](#cosas-que-no-se-pueden-hacer-con-parámetros-genéricos)
   - [Interface collection](#interface-collection)
     - [Interface List](#interface-list)
-    - [Interface Queue](#interface-queue)
     - [Clase ArrayList](#clase-arraylist)
+    - [Interface Queue](#interface-queue)
     - [Clase LinkedList](#clase-linkedlist)
     - [Interface Set](#interface-set)
     - [Clase HashSet](#clase-hashset)
@@ -339,7 +339,24 @@ Métodos más importantes de la interface List.
 |indexOf|Devuelve la posición del elemento. Si no lo encuentra, devuelve -1|
 |lastIndexOf|devuelve la posición del elemento comenzando a buscarle por el final. Si no lo encuentra, devuelve -1|
 
+### Clase ArrayList
+
+Implementa __la interface List__ y posee 3 constructores:
+```java
+//constructor por defecto, crea un Arraylist vacío
+ArrayList();
+//Crea una lista con una capacidad inicial indicada por parámetro
+ArrayList(int capacidadInicial)
+//Crea una lista a partir de los elementos de la colección pasada por parámetro
+ArrayList( Collection| Collection<E> collection)
+```
+Nos permitirá implimentar cualquier tipo de listas
+
+![imagen listas](img/listas.png)
+
 :computer: Hoja de ejemplos (EjemploList)
+
+:computer: Hoja de ejercicios de colecciones 1
 
 ### Interface Queue
 
@@ -367,21 +384,6 @@ Los métodos más importantes de la interfaz queue son los siguientes:
 
 <div class="page"/>
 
-### Clase ArrayList
-
-Implementa __la interface List__ y posee 3 constructores:
-```java
-//constructor por defecto, crea un Arraylist vacío
-ArrayList();
-//Crea una lista con una capacidad inicial indicada por parámetro
-ArrayList(int capacidadInicial)
-//Crea una lista a partir de los elementos de la colección pasada por parámetro
-ArrayList( Collection| Collection<E> collection)
-```
-Nos permitirá implimentar cualquier tipo de listas
-
-![imagen listas](img/listas.png)
-
 ### Clase LinkedList
 
 Implementa __las interfaces List y Queue__. Tiene métodos que permiten crear listas de adición tanto por delante como por detrás (listas dobles). Desde esta clase es sencillo implementar estructuras en forma de pila o de cola.
@@ -406,8 +408,6 @@ En el caso de __implementar colas__,los nuevos elementos se añaden por la cola,
 ![imagen cola](img/Cola.svg)
 
 :computer: Hoja de ejemplos (EjemploListasOrdenadas)
-
-:computer: Hoja de ejercicios de colecciones 1
 
 :computer: Hoja de ejercicios de colecciones 2
 
