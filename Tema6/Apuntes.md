@@ -300,7 +300,7 @@ Existen dos modos para recorrer las colecciones:
 ```java
 Iterator <String> iterator = collection.iterator();
 while (iterator.hasNext()){
-    String cadena=it.next();
+    String cadena=iterator.next();
     system.out.println(cadena);
 }
 ```
