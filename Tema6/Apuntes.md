@@ -358,6 +358,8 @@ Nos permitirá implimentar cualquier tipo de listas
 
 :computer: Hoja de ejercicios de colecciones 1
 
+:computer: Hoja de ejemplos (EjemploListasOrdenadas)
+
 ### Interface Queue
 
 * Una cola es una estructura de datos de tipo FIFO (First input, First Output)
@@ -406,8 +408,6 @@ En el caso de __implementar pilas__, los nuevos elementos de la pila se añadir�
 En el caso de __implementar colas__,los nuevos elementos se añaden por la cola, pero se obtienen por la cabeza (__getFirst, removeFirst__).
 
 ![imagen cola](img/Cola.svg)
-
-:computer: Hoja de ejemplos (EjemploListasOrdenadas)
 
 :computer: Hoja de ejercicios de colecciones 2
 
