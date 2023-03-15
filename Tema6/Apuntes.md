@@ -405,7 +405,7 @@ En el caso de __implementar pilas__, los nuevos elementos de la pila se añadir�
 
 ![imagen pila](img/Pila.svg)
 
-En el caso de __implementar colas__,los nuevos elementos se añaden por la cola, pero se obtienen por la cabeza (__getFirst, removeFirst__).
+En el caso de __implementar colas__,los nuevos elementos se añaden por la cola (__addLast__), pero se obtienen por la cabeza (__getFirst, removeFirst__).
 
 ![imagen cola](img/Cola.svg)
 
