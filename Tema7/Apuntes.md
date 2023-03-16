@@ -616,7 +616,7 @@ Vemos el ejercicio completo en el siguiente ejemplo.
 
 :computer: Hoja de ejercicios 7
 
-:computer: Hoja de ejercicios 8
+
 
 
 
