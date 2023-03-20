@@ -413,7 +413,7 @@ En el caso de __implementar colas__,los nuevos elementos se añaden por la cola 
 
 ### Interface Set
 
-La interfaz __Set__ representa una repetición de elementos que __no pueden estar duplicados__
+La interfaz __Set__ representa una repetición de elementos que __no pueden estar duplicados__. 
 
 Hereda de la interface Collection y, por tanto, posee los mismos métodos. La diferencia está en el uso de duplicados. 
 
@@ -428,21 +428,21 @@ Listas:
 
 ### Clase HashSet
 
-Implementa __listas sin duplicados__.
-Tiene los métodos de la __interfaz Collection__ 
-__Internamente una tabla de tipo hash__. Esas tablas asocian claves a conjuntos de valores.
+Implementa __listas sin duplicados__. Tiene los métodos de la __interfaz Collection__. Internamente utiliza una **tabla de tipo hash**. Esas tablas asocian claves a conjuntos de valores.
+
 La naturaleza de las tablas hash hace que cuando se crean listas HashSet, no habrá valores duplicados, pero en absoluto se garantiza el orden. Es decir, cada vez que llega un valor único al array se añade en una posición del mismo (la siguiente que esté libre), si llega otro con el mismo valor se añade a la lista de esa celda del array. 
 
 ![imagen tablaHash](img/tablahash.png)
 
 >Pero ¿cómo compara Java los objetos de la lista para saber si son iguales? 
 
-* Utiliza el __método equals__ heredado de la clase base Object. Por ello es necesario que las clases de los objetos que se almacenarán en la tabla definan ese método. 
-* Definir también el método heredado __hashCode__. La razón es que es el hashCode es el código pensado para este tipo de lista, de hecho es el identificador en una lista HashSet, por ello los objetos que consideremos iguales en contenido deben devolver el mismo hashCode, es decir, el mismo número entero. 
+* Hay que definir el __método equals__ heredado de la clase base Object. Por ello es necesario que las clases de los objetos que se almacenarán en la tabla definan ese método. 
+* Hay que definir también el método heredado __hashCode__. La razón es que es el hashCode es el código pensado para este tipo de lista, de hecho es el identificador en una lista HashSet, por ello los objetos que consideremos iguales en contenido deben devolver el mismo hashCode, es decir, el mismo número entero. 
   
 ### clase LinkedHashSet
 
 Se trata de una clase heredera de la anterior con los mismos métodos y funciones, pero que consigue mantener el __orden en el que los datos fueron insertados__.
+
 Sigue necesitando __hashCode y equals__ en la clase.
 
 :computer: Hoja de ejemplos (EjemploHashSetYLinkedHashSet)
