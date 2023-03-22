@@ -208,8 +208,11 @@ public static void main(String[ ] args)
 	}
 	finally{
 		if(f!=null)
-			f.close();
-	}
+			try {
+      f.close();
+    } catch (IOException ex) {
+      System.out.println("Error al cerrar el fichero.");
+    }
 }
 ```
 
@@ -233,8 +236,11 @@ public static void main(String[ ] args) {
   }
   finally{
 	  if(f!=null)
-		  f.close();
-  }
+		  try {
+      f.close();
+    } catch (IOException ex) {
+      System.out.println("Error al cerrar el fichero.");
+    }
 ```
 
 En este ejemplo hemos añadido palabra true después del nombre del fichero para que grabe a continuación, y también hemos añadido la clausula finally de la excepción para que en caso de que se haya podido abrir el fichero, al final lo cierre.
@@ -425,7 +431,7 @@ Sus métodos más utilizados son:
 Para este tipo de ficheros, primero se crean a través de un programa en Java, escribiendo los datos que se necesiten según las características del ejercicio. Vemos un ejemplo donde se crea un fichero donde se guarda el nombre y edad de una persona.
 
 ```java
-public static void crear(File fichero) throws IOException {
+public static void crear(File fichero) {
   String nombre;
   int edad;
   FileOutputStream f = null;
@@ -446,7 +452,10 @@ public static void crear(File fichero) throws IOException {
     System.out.println("error " + ex.toString());
   } finally {
     if (fd != null) {
+      try {
       fd.close();
+    } catch (IOException ex) {
+      System.out.println("Error al cerrar el fichero.");
     }
   }
 }

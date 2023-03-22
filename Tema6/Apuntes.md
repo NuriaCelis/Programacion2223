@@ -491,7 +491,8 @@ Con lo cual __los objetos a incluir en un TreeSet deben implementar Comparable y
 Representa una estructura de datos para almacenar pares "clave/valor“.
 Para cada clave, solo tiene un valor.
 
-principales métodos
+Principales métodos
+
 ```java
 nombreMap.size();//Devuelve el número de elementos del Map
 nombreMap.isEmpty();// Devuelve true si no hay elementos en el Map y false si si los hay
