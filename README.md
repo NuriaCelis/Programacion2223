@@ -41,3 +41,7 @@ Apuntes de programación del CFGS de Desarrollo de Aplicaciones Multiplataforma.
   [Programación Funcional.](Tema6/ProgramacionFuncional.md)
 
   [Java XML.](Tema6/JavaXML.md)
+
+  **7. UNIDAD 7. Ficheros**
+
+  [Apuntes de la Unidad 7.](Tema7/Apuntes.md)
