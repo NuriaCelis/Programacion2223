@@ -1,5 +1,23 @@
 # UNIDAD 7. FICHEROS
 
+- [UNIDAD 7. FICHEROS](#unidad-7-ficheros)
+  - [INTRODUCCIÓN](#introducción)
+  - [CLASES PARA TRABAJAR CON EL SISTEMA DE FICHEROS](#clases-para-trabajar-con-el-sistema-de-ficheros)
+    - [API java.io](#api-javaio)
+  - [EJERCICIOS](#ejercicios)
+    - [API java.nio](#api-javanio)
+  - [FLUJOS DE DATOS](#flujos-de-datos)
+  - [FICHEROS DE TEXTO](#ficheros-de-texto)
+    - [Gestión de ficheros de texto (Byte a byte)](#gestión-de-ficheros-de-texto-byte-a-byte)
+  - [EJERCICIOS](#ejercicios-1)
+    - [Gestión de ficheros de texto (Caracter a caracter)](#gestión-de-ficheros-de-texto-caracter-a-caracter)
+  - [EJERCICIOS](#ejercicios-2)
+  - [FICHEROS BINARIOS](#ficheros-binarios)
+  - [EJERCICIOS](#ejercicios-3)
+  - [FICHEROS DE OBJETOS. SERIALIZACIÓN](#ficheros-de-objetos-serialización)
+  - [EJERCICIOS](#ejercicios-4)
+
+
 ## INTRODUCCIÓN
 
 Un fichero es un conjunto de bits almacenado en un dispositivo. Tienen nombre y se ubican en directorios. Ese nombre es único en el directorio.
@@ -210,9 +228,9 @@ public static void main(String[ ] args)
 		if(f!=null)
 			try {
       f.close();
-    } catch (IOException ex) {
-      System.out.println("Error al cerrar el fichero.");
-    }
+      } catch (IOException ex) {
+        System.out.println("Error al cerrar el fichero.");
+      }
 }
 ```
 
@@ -237,10 +255,11 @@ public static void main(String[ ] args) {
   finally{
 	  if(f!=null)
 		  try {
-      f.close();
-    } catch (IOException ex) {
-      System.out.println("Error al cerrar el fichero.");
-    }
+        f.close();
+      } catch (IOException ex) {
+        System.out.println("Error al cerrar el fichero.");
+      }
+  }
 ```
 
 En este ejemplo hemos añadido palabra true después del nombre del fichero para que grabe a continuación, y también hemos añadido la clausula finally de la excepción para que en caso de que se haya podido abrir el fichero, al final lo cierre.
@@ -348,7 +367,9 @@ public static void main(String[] args) {
   } catch (FileNotFoundException e) {
     System.out.println(e.getMessage());
   } finally {
-    salida.close();
+    if(salida!=null){
+       salida.close();
+    }
   }
 }
 ```
@@ -374,7 +395,9 @@ public static void main(String[] args) {
   } catch (IOException ex) {
     System.out.println(e.getMessage());
   } finally {
-    salida.close();
+    if(salida!=null){
+       salida.close();
+    }
   }
 }
 ```
@@ -451,14 +474,13 @@ public static void crear(File fichero) {
   } catch (IOException ex) {
     System.out.println("error " + ex.toString());
   } finally {
-    if (fd != null) {
+    if (fd != null) 
       try {
       fd.close();
     } catch (IOException ex) {
       System.out.println("Error al cerrar el fichero.");
-    }
+    }  
   }
-}
 ```
 
 Una vez creado el fichero, se puede leer el contenido de dicho fichero. Para ello, la lectura de los datos del fichero ha de ser en el mismo orden y el mismo tipo de datos que como fue creado.
@@ -485,8 +507,11 @@ public static void leer(File fichero) throws IOException {
   } catch (IOException ex) {
     System.out.println("error " + ex.toString());
   } finally {
-    if (fd != null) {
-    fd.close();
+    if (fd != null) 
+      try {
+      fd.close();
+    } catch (IOException ex) {
+      System.out.println("Error al cerrar el fichero.");
     }
   }
 }
