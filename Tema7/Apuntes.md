@@ -166,7 +166,7 @@ Las clases para trabajar con ficheros se encuentran en el paquete java.io, por l
 
 **Lectura de ficheros de texto byte a byte**:
 
-La **clase InputStream** y sus hijas se utilizan para leer corrientes de datos byte a byte. Con la clase FileInputStream leemos de ficheros de texto de forma secuencial.
+La **clase InputStream** y sus hijas se utilizan para leer corrientes de datos byte a byte. Con la clase **FileInputStream** leemos de ficheros de texto de forma secuencial.
 
 Presenta el método read() para la lectura del fichero. Este método se puede invocar de varias formas:
 
@@ -201,7 +201,7 @@ try {
 
 **Escritura de ficheros de texto byte a byte**:
 
-La **clase OutputStream** y sus hijas se utilizan para escribir corrientes de datos byte a byte. Con la clase FileOutputStream escribimos en ficheros de texto de forma secuencial.
+La **clase OutputStream** y sus hijas se utilizan para escribir corrientes de datos byte a byte. Con la clase **FileOutputStream** escribimos en ficheros de texto de forma secuencial.
 
 Presenta el método write() para la escritura en el fichero. Presenta varios formatos:
 
@@ -410,7 +410,7 @@ public static void main(String[] args) {
 
 Un fichero binario es aquel que el usuario no puede editarle directamente con un editor de texto y, cuando lo intentas abrir a través de ese medio, tiene símbolos que no se pueden leer directamente.
 
-Este tipoo de ficheros se utilizan cuando queremos trabajar con tipos de datos primitivos: bolean, byte, int, double,…. para después recuperarlos como tal.
+Este tipo de ficheros se utilizan cuando queremos trabajar con tipos de datos primitivos: bolean, byte, int, double,…. para después recuperarlos como tal.
 
 El paquete java.io proporciona las clases **DataOutputStream** y **DataInputStream** que derivan de la clase **OutputStream** y **InputStream** respectivamente y actúan como filtros. Lo utilizamos de la siguiente manera:
 
