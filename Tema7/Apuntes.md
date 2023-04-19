@@ -437,7 +437,7 @@ Los métodos más utilizados de esta clase son:
 
 ```java
 FileInputStream f = new FileInputStream ("fichero.dat");
-DataIntputStream g=new DataInputStream(f);
+DataInputStream g=new DataInputStream(f);
 ```
 
 Sus métodos más utilizados son:
