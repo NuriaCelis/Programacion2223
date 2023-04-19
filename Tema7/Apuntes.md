@@ -417,7 +417,7 @@ El paquete java.io proporciona las clases **DataOutputStream** y **DataInputStre
 - **DataOutputStream:**
 
 ```java
-FileOutputStream f = new FileOutputStreasm ("fichero.dat");
+FileOutputStream f = new FileOutputStream ("fichero.dat");
 DataOutputStream g=new DataOutputStream(f);
 ```
 
@@ -436,7 +436,7 @@ Los métodos más utilizados de esta clase son:
 - **DataInputStream:**
 
 ```java
-FileInputStream f = new FileInputStreasm ("fichero.dat");
+FileInputStream f = new FileInputStream ("fichero.dat");
 DataIntputStream g=new DataInputStream(f);
 ```
 
@@ -486,7 +486,7 @@ public static void crear(File fichero) {
 Una vez creado el fichero, se puede leer el contenido de dicho fichero. Para ello, la lectura de los datos del fichero ha de ser en el mismo orden y el mismo tipo de datos que como fue creado.
 
 ```java
-public static void leer(File fichero) throws IOException {
+public static void leer(File fichero) {
   String nombre;
   int edad;
   FileInputStream f = null;
