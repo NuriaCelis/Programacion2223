@@ -21,9 +21,9 @@ public class BaseDatos {
 
     private Connection conn = null; //atributo conexión
     // constantes a definir
-    private static final String BD = "inmobiliaria";
-    private static final String USUARIO = "conexion";
-    private static final String CLAVE = "";
+    private static final String BD = "inmobiliaria2";
+    private static final String USUARIO = "root";
+    private static final String CLAVE = "root";
     private static final String URL = "jdbc:mysql://localhost:3306/" + BD;
 
     private BaseDatos() {

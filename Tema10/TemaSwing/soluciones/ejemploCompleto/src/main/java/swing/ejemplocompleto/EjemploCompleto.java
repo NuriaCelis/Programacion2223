@@ -38,7 +38,7 @@ public class EjemploCompleto extends javax.swing.JFrame {
         mostrarImagen();
         cargarItems();
         modeloTabla = (DefaultTableModel) jTablePropietarios.getModel();
-        this.modeloLista = new DefaultListModel<Inmueble>();
+        this.modeloLista = new DefaultListModel<>();
 
         jListInmuebles.setModel(modeloLista);
 
